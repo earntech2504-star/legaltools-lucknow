@@ -7,7 +7,6 @@
 <meta name="description" content="IPC to BNS Converter 302=103, CrPC to BNSS 156(3)=175(3), BSA 63 Electronic Evidence, Bail Application 480 482 BNSS, Mangal to KrutiDev, Court Fee UP, Stamp Duty Lucknow, Circle Rate, Khatauni, Photo to PDF Court Size">
 <meta name="theme-color" content="#1a1a1a">
 <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
 <link rel="apple-touch-icon" href="/icons/icon-192.png">
@@ -30,7 +29,7 @@
     "@type": "Organization",
     "name": "LegalTools Lucknow",
     "url": "https://lucknow-kanoon-sahayak-stqg.vercel.app/",
-    "contactPoint": { "@type": "ContactPoint", "email": "icfai.sandeep@oksbi", "contactType": "customer support" }
+    "contactPoint": { "@type": "ContactPoint", "email": "sahayakkanoon@gmail.com", "contactType": "customer support" }
   },
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "127" },
   "featureList": [
@@ -38,7 +37,7 @@
     "CrPC to BNSS Converter (156(3)=175(3))",
     "BSA Section 63 Electronic Evidence",
     "Bail Application Format (480/482 BNSS)",
-    "Stamp Duty Calculator UP",
+    "Stamp Duty Calculator UP (Auto + Manual)",
     "Circle Rate Calculator Lucknow",
     "Court Fee Calculator UP",
     "Mangal to KrutiDev Converter",
@@ -71,7 +70,6 @@ input,textarea,select{width:100%;padding:11px;border:1px solid #1a1a1a;border-ra
 .trend{font-size:11px;padding:4px 10px;border-radius:20px;border:1px solid #d4c9b0;background:#f4f1ea;cursor:pointer;margin:3px;display:inline-block}
 .toolCard{border:1px solid #ddd;padding:10px;border-radius:4px;background:#fff}
 .small{font-size:10px;color:#888;text-align:center;margin-top:8px;display:block}
-.adBox{background:#fff;text-align:center;padding:6px;border:1px dashed #c9b99a;margin:10px 0;font-size:10px;color:#999;min-height:60px}
 @keyframes pulseMic{0%{box-shadow:0 0 0 0 rgba(139,0,0,.7)}70%{box-shadow:0 0 0 12px rgba(139,0,0,0)}100%{box-shadow:0 0 0 0 rgba(139,0,0,0)}}
 .listening{animation:pulseMic 1.3s infinite;background:#8b0000 !important}
 footer{background:#1a1a1a;color:#d4c9b0;padding:20px 16px;text-align:center;font-size:12px;margin-top:20px}
@@ -84,7 +82,22 @@ footer a:hover{text-decoration:underline}
 .quoteBox .refreshQuote{position:absolute;top:8px;right:12px;cursor:pointer;font-size:14px;opacity:.7}
 .quoteBox .refreshQuote:hover{opacity:1}
 
-/* SMART TAB BAR */
+.adBox{background:linear-gradient(135deg,#fdfcf8 0%,#f4f1ea 100%);border:1px solid #d4c9b0;border-radius:10px;margin:16px 0;padding:0;overflow:hidden;position:relative;box-shadow:0 2px 10px rgba(139,0,0,.05);transition:all .3s}
+.adBox:hover{box-shadow:0 6px 20px rgba(139,0,0,.12);transform:translateY(-1px)}
+.adBoxTopBar{background:linear-gradient(90deg,#1a1a1a 0%,#2b1d14 100%);color:#f4d7b0;padding:6px 14px;font-size:9px;letter-spacing:2px;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+.adBoxTopBar .adPulse{display:inline-flex;align-items:center;gap:5px;font-size:9px;color:#d4c9b0}
+.adBoxTopBar .adPulse .dot{width:6px;height:6px;border-radius:50%;background:#0f0;box-shadow:0 0 6px #0f0;animation:blink 1.5s infinite}
+.adBoxInner{padding:16px 18px;display:flex;gap:14px;align-items:flex-start}
+@media(max-width:600px){.adBoxInner{flex-direction:column;gap:10px}}
+.adBoxIcon{width:48px;height:48px;flex-shrink:0;border-radius:10px;background:linear-gradient(135deg,#8b0000 0%,#2b1d14 100%);color:#f4d7b0;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 3px 10px rgba(139,0,0,.25)}
+.adBoxContent{flex:1;min-width:0}
+.adBoxLabel{font-size:9px;color:#b8a884;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;display:inline-block;padding:2px 8px;background:#f4f1ea;border-radius:20px;border:1px solid #d4c9b0}
+.adBoxTitle{font-size:15px;font-weight:700;color:#1a1a1a;margin-bottom:6px;line-height:1.4;font-family:'Times New Roman',serif}
+.adBoxDesc{font-size:12px;color:#555;line-height:1.6;margin-bottom:10px}
+.adBoxCTA{display:inline-block;background:linear-gradient(135deg,#8b0000 0%,#6b0000 100%);color:#fff;padding:8px 18px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;cursor:pointer;border:none;transition:all .2s;box-shadow:0 3px 10px rgba(139,0,0,.2)}
+.adBoxCTA:hover{background:linear-gradient(135deg,#1a1a1a 0%,#2b1d14 100%);transform:translateY(-1px);box-shadow:0 5px 14px rgba(0,0,0,.25)}
+.adBoxAdSpace{margin-top:10px;padding:10px;border:1px dashed #d4c9b0;border-radius:6px;background:rgba(255,255,255,.5);text-align:center;font-size:10px;color:#b8a884;font-style:italic;min-height:44px;display:flex;align-items:center;justify-content:center;letter-spacing:.5px}
+
 .smartTabs{background:#fff;border-bottom:1px solid #d4c9b0;position:sticky;top:0;z-index:99;box-shadow:0 2px 8px rgba(0,0,0,.06);overflow-x:auto;white-space:nowrap;scrollbar-width:thin}
 .smartTabs::-webkit-scrollbar{height:5px}
 .smartTabs::-webkit-scrollbar-thumb{background:#d4c9b0;border-radius:3px}
@@ -100,6 +113,31 @@ footer a:hover{text-decoration:underline}
 .smartDropdown a:hover{background:#f4f1ea;color:#8b0000;padding-left:16px}
 .smartDropdown a::before{content:"› ";color:#8b0000;font-weight:700}
 .scrollTarget{scroll-margin-top:80px}
+
+.premiumCalc{background:linear-gradient(135deg,#fffef8 0%,#fdfbf5 100%);border:1px solid #d4c9b0;border-radius:12px;padding:0;overflow:hidden;box-shadow:0 4px 20px rgba(139,0,0,.08);margin-bottom:14px;transition:all .3s;position:relative}
+.premiumCalc:hover{box-shadow:0 8px 30px rgba(139,0,0,.15);transform:translateY(-2px)}
+.premiumCalcHeader{background:linear-gradient(135deg,#1a1a1a 0%,#2b1d14 100%);color:#f4d7b0;padding:14px 18px;position:relative;overflow:hidden}
+.premiumCalcHeader::before{content:"";position:absolute;top:0;right:0;width:120px;height:100%;background:linear-gradient(90deg,transparent,rgba(139,0,0,.2));pointer-events:none}
+.premiumCalcHeader .calcTitle{font-size:15px;font-weight:700;letter-spacing:.3px;display:flex;align-items:center;gap:8px}
+.premiumCalcHeader .calcTitle .icon{font-size:20px}
+.premiumCalcHeader .calcSubtitle{font-size:10px;color:#d4c9b0;margin-top:4px;letter-spacing:.5px}
+.premiumCalcBody{padding:18px}
+.premiumCalcBody .modeToggle{display:flex;gap:0;margin-bottom:14px;border:1.5px solid #1a1a1a;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.premiumCalcBody .modeBtn{flex:1;padding:10px 12px;background:#fff;color:#1a1a1a;border:none;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.3px}
+.premiumCalcBody .modeBtn:hover{background:#f4f1ea}
+.premiumCalcBody .modeBtn.active{background:linear-gradient(135deg,#8b0000 0%,#6b0000 100%);color:#fff;box-shadow:inset 0 2px 4px rgba(0,0,0,.2)}
+.premiumCalcBody label{display:block;font-size:11px;color:#555;font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+.premiumCalcBody input,.premiumCalcBody select{border:1.5px solid #d4c9b0;background:#fff;padding:10px 12px;font-size:13px;border-radius:6px;transition:all .2s;font-family:'Times New Roman',serif}
+.premiumCalcBody input:focus,.premiumCalcBody select:focus{border-color:#8b0000;outline:none;box-shadow:0 0 0 3px rgba(139,0,0,.08)}
+.premiumCalcBody .calcBtn{width:100%;padding:12px;background:linear-gradient(135deg,#8b0000 0%,#6b0000 100%);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;margin-top:6px;transition:all .2s;letter-spacing:.3px;box-shadow:0 4px 12px rgba(139,0,0,.25)}
+.premiumCalcBody .calcBtn:hover{background:linear-gradient(135deg,#1a1a1a 0%,#2b1d14 100%);transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.3)}
+.premiumCalcBody .calcResult{margin-top:12px;padding:14px;background:linear-gradient(135deg,#fffef8 0%,#f4f1ea 100%);border-left:4px solid #8b0000;border-radius:8px;font-size:12px;line-height:1.8;min-height:50px;color:#1a1a1a}
+.premiumCalcBody .calcResult b{color:#8b0000}
+.premiumCalcBody .rateHint{font-size:10px;color:#0a7a0a;margin-top:-6px;margin-bottom:8px;font-weight:700;letter-spacing:.3px}
+.premiumCalcBody .updateBanner{background:linear-gradient(135deg,#fff8e6 0%,#fff2d4 100%);border:1px solid #f4d7b0;border-radius:6px;padding:8px 12px;font-size:10px;color:#8b6914;margin-top:12px;display:flex;gap:8px;align-items:flex-start;line-height:1.5}
+.premiumCalcBody .updateBanner .bIcon{font-size:14px;flex-shrink:0}
+.premiumCalcBody .igrsupBtn{display:block;text-align:center;background:#fff;border:1.5px solid #8b0000;color:#8b0000;padding:9px;border-radius:6px;font-size:11px;font-weight:700;text-decoration:none;margin-top:10px;transition:all .2s;letter-spacing:.3px}
+.premiumCalcBody .igrsupBtn:hover{background:#8b0000;color:#fff}
 </style>
 </head>
 <body>
@@ -109,7 +147,6 @@ footer a:hover{text-decoration:underline}
 <div style="font-size:11px;text-align:right">Lucknow, UP<br><span id="proBadge" style="background:#8b0000;color:#fff;padding:2px 8px;border-radius:4px;font-size:10px">FREE USER</span><br>All Districts Supported</div>
 </header>
 
-<!-- SMART TAB BAR -->
 <div class="smartTabs">
 <div class="smartTabsInner">
   <div class="smartTab" onclick="smartJump('sec-converter', this)"><span class="icon">⚖️</span> BNS Converter</div>
@@ -158,10 +195,21 @@ footer a:hover{text-decoration:underline}
 <small class="small">Language Converter Tool - एक क्लिक में भाषा बदलें</small>
 </div>
 
-<!-- ADSENSE AD 1 -->
-<div class="adBox">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<div class="adBox" id="adSlotTop">
+  <div class="adBoxTopBar">
+    <span>⚖️ Legal Partner Spotlight</span>
+    <span class="adPulse"><span class="dot"></span> Live</span>
+  </div>
+  <div class="adBoxInner">
+    <div class="adBoxIcon">🏛️</div>
+    <div class="adBoxContent">
+      <span class="adBoxLabel">Featured</span>
+      <div class="adBoxTitle" id="adTopTitle">Lucknow के भरोसेमंद Legal Services</div>
+      <div class="adBoxDesc" id="adTopDesc">Property registration, court documentation, aur legal consultation — verified professionals से सीधे जुड़ें।</div>
+      <a class="adBoxCTA" href="mailto:sahayakkanoon@gmail.com?subject=Legal%20Services%20Enquiry">📩 संपर्क करें</a>
+      <div class="adBoxAdSpace" id="adTopSpace">Ad Space Available · 728x90 Responsive</div>
+    </div>
+  </div>
 </div>
 
 <div class="card scrollTarget" id="sec-converter" style="border:2px solid #8b0000;background:#fffef8">
@@ -177,7 +225,6 @@ footer a:hover{text-decoration:underline}
 <small class="small">Based on BNS 2023, BNSS 2023, BSA 2023 - Verify with Bare Act</small>
 </div>
 
-<!-- LUCKNOW KANOON SAHAYAK INTEGRATION -->
 <div class="card scrollTarget" id="sec-kanoon" style="border:2px solid #8b0000;background:#fffef8">
   <h3>⚖️ Lucknow Kanoon Sahayak 9.0 - AI Voice Legal Assistant</h3>
   <p style="font-size:12px;color:#555;margin-bottom:10px">
@@ -210,18 +257,9 @@ footer a:hover{text-decoration:underline}
       ⬇️ पूरा Kanoon Sahayak यहीं खोलें (Live Embed) — Click to expand
     </summary>
     <div style="margin-top:8px;border:1px solid #d4c9b0;border-radius:6px;overflow:hidden;background:#fff">
-      <iframe
-        src="https://lucknow-kanoon-sahayak-stqg.vercel.app/"
-        style="width:100%;height:700px;border:0;display:block"
-        loading="lazy"
-        title="Lucknow Kanoon Sahayak 9.0 - AI Legal Assistant"
-        referrerpolicy="no-referrer-when-downgrade"
-        allow="microphone; camera; clipboard-write">
-      </iframe>
+      <iframe src="https://lucknow-kanoon-sahayak-stqg.vercel.app/" style="width:100%;height:700px;border:0;display:block" loading="lazy" title="Lucknow Kanoon Sahayak 9.0" referrerpolicy="no-referrer-when-downgrade" allow="microphone; camera; clipboard-write"></iframe>
     </div>
-    <div style="font-size:10px;color:#888;margin-top:4px;text-align:center">
-      Powered by Lucknow Kanoon Sahayak 9.0 · Vercel Hosted
-    </div>
+    <div style="font-size:10px;color:#888;margin-top:4px;text-align:center">Powered by Lucknow Kanoon Sahayak 9.0 · Vercel Hosted</div>
   </details>
 
   <small class="small" style="text-align:left;margin-top:10px">
@@ -231,7 +269,7 @@ footer a:hover{text-decoration:underline}
 
 <div class="card" style="border:2px solid #1a1a1a">
 <h3>🔍 खोजें - जो प्रारूप चाहिए लिखें</h3>
-<input id="toolSearch" placeholder="Ex: Bail Application, IPC 302 to BNS, Court Fee Lucknow, Mangal to KrutiDev, Circle Rate, Photo to PDF, BSA 63..." onkeypress="if(event.key==='Enter')searchAndAutoAdd(this.value)">
+<input id="toolSearch" placeholder="Ex: Bail Application, IPC 302 to BNS, Court Fee Lucknow, Mangal to KrutiDev, Circle Rate..." onkeypress="if(event.key==='Enter')searchAndAutoAdd(this.value)">
 <div style="display:flex;gap:6px;margin-top:6px">
 <button class="btn" onclick="searchAndAutoAdd(document.getElementById('toolSearch').value)">खोजें</button>
 <button class="btn-b btn" onclick="showTrending()">🔥 Top Demand (Auto)</button>
@@ -244,14 +282,25 @@ footer a:hover{text-decoration:underline}
 <div id="autoToolsGrid" class="grid2"></div>
 </div>
 
-<!-- ADSENSE AD 2 -->
-<div class="adBox">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<div class="adBox" id="adSlotMiddle">
+  <div class="adBoxTopBar">
+    <span>📚 Recommended for You</span>
+    <span class="adPulse"><span class="dot"></span> Updated Daily</span>
+  </div>
+  <div class="adBoxInner">
+    <div class="adBoxIcon">📖</div>
+    <div class="adBoxContent">
+      <span class="adBoxLabel">Today's Pick</span>
+      <div class="adBoxTitle" id="adMidTitle">Legal Documentation made simple</div>
+      <div class="adBoxDesc" id="adMidDesc">Bainama, kirayanama, will aur affidavit — सब court-ready formats में।</div>
+      <a class="adBoxCTA" onclick="smartJump('sec-drafting', null)" style="cursor:pointer">📝 Draft बनाएँ</a>
+      <div class="adBoxAdSpace" id="adMidSpace">Ad Space Available · Responsive</div>
+    </div>
+  </div>
 </div>
 
 <div class="card" id="sec-tools" style="border:2px solid #1a1a1a;background:#fffef8">
-<h3>🔤 Purane Demanding Tools - Mangal to KrutiDev + Photo to PDF + Khatauni + Court Fee + Circle Rate</h3>
+<h3>🔤 Purane Demanding Tools - Mangal to KrutiDev + Photo to PDF + Khatauni + Court Fee</h3>
 <div class="grid2">
 <div class="toolCard scrollTarget" id="sec-mangal-type">
   <b>🔤 Mangal to KrutiDev 010 Converter</b>
@@ -259,7 +308,6 @@ footer a:hover{text-decoration:underline}
     <button class="btn" style="flex:1;font-size:11px;background:#1a1a1a" onclick="mangalTab('type')">⌨️ Type Mode</button>
     <button class="btn-b btn" style="flex:1;font-size:11px" onclick="mangalTab('upload')">📁 File Upload Mode</button>
   </div>
-
   <div id="mangalTypeMode">
     <textarea id="mangalInput" rows="3" placeholder="Mangal Hindi yahan likho - लखनऊ कचहरी" style="margin-top:6px"></textarea>
     <div style="display:flex;gap:4px;margin-top:4px">
@@ -269,8 +317,8 @@ footer a:hover{text-decoration:underline}
     <textarea id="krutiOutput" rows="3" placeholder="KrutiDev yahan ayega" style="margin-top:6px"></textarea>
     <button class="btn-b btn" style="font-size:11px;padding:4px 8px" onclick="copyKruti()">📋 Copy KrutiDev</button>
   </div>
-
-  <div id="mangalUploadMode" style="display:none">
+  <div id="mangalUploadMode" class="scrollTarget" style="display:none">
+    <span id="sec-mangal-upload" style="display:block;height:0"></span>
     <div style="margin-top:6px;padding:14px;border:2px dashed #8b0000;border-radius:6px;text-align:center;background:#fffef8;cursor:pointer" onclick="document.getElementById('mangalFile').click()">
       <div style="font-size:28px">📄</div>
       <div style="font-size:12px;font-weight:700;margin-top:4px">Click to Upload File</div>
@@ -282,99 +330,194 @@ footer a:hover{text-decoration:underline}
       <button class="btn" style="flex:1;font-size:11px" onclick="convertFileMangalToKruti()">Mangal → KrutiDev</button>
       <button class="btn-b btn" style="flex:1;font-size:11px" onclick="convertFileKrutiToMangal()">Kruti → Mangal</button>
     </div>
-    <textarea id="mangalFileInput" rows="3" placeholder="File ka text yahan dikhega (editable)" style="margin-top:6px"></textarea>
+    <textarea id="mangalFileInput" rows="3" placeholder="File ka text yahan dikhega" style="margin-top:6px"></textarea>
     <textarea id="krutiFileOutput" rows="3" placeholder="KrutiDev output yahan ayega" style="margin-top:6px"></textarea>
     <div style="display:flex;gap:4px;margin-top:4px">
       <button class="btn-b btn" style="flex:1;font-size:11px;padding:6px" onclick="copyFileKruti()">📋 Copy Output</button>
       <button class="btn" style="flex:1;font-size:11px;padding:6px" onclick="downloadKrutiFile()">💾 Download .txt</button>
     </div>
-    <div style="margin-top:6px;font-size:10px;color:#888">💡 .doc/.docx ke liye: pehle Word me file kholkar "Save As → Plain Text" karein, phir yahan upload karein</div>
   </div>
 </div>
 
-<div class="toolCard scrollTarget" id="sec-photo"><b>📸 Photo to PDF - Court Size A4 200-500KB</b><br><input type="file" id="photoInput" accept="image/*" multiple style="margin-top:6px"><button class="btn" style="width:100%;margin-top:4px;font-size:11px" onclick="convertPhotoToPDF()">Photo → PDF Banao</button><div id="pdfStatus" style="font-size:11px;margin-top:6px;color:#8b0000;min-height:20px">Photo select karo - Khatauni/Bainama ke liye</div><canvas id="pdfCanvas" style="display:none"></canvas><div style="margin-top:8px"><a href="https://upbhulekh.gov.in" target="_blank" rel="noopener" class="btn-b btn" style="font-size:11px;padding:5px;display:block;text-align:center;text-decoration:none;margin-top:3px">UP Bhulekh - Khatauni</a><a href="https://upbhunaksha.gov.in" target="_blank" rel="noopener" class="btn-b btn" style="font-size:11px;padding:5px;display:block;text-align:center;text-decoration:none;margin-top:3px">Bhu-Naksha Map</a><a href="https://ecourts.gov.in" target="_blank" rel="noopener" class="btn-b btn" style="font-size:11px;padding:5px;display:block;text-align:center;text-decoration:none;margin-top:3px">eCourts Cause List Lucknow</a></div></div>
+<div class="toolCard scrollTarget" id="sec-photo">
+  <b>📸 Photo to PDF - Court Size A4 200-500KB</b><br>
+  <input type="file" id="photoInput" accept="image/*" multiple style="margin-top:6px">
+  <button class="btn" style="width:100%;margin-top:4px;font-size:11px" onclick="convertPhotoToPDF()">Photo → PDF Banao</button>
+  <div id="pdfStatus" style="font-size:11px;margin-top:6px;color:#8b0000;min-height:20px">Photo select karo</div>
+  <canvas id="pdfCanvas" style="display:none"></canvas>
+  <div style="margin-top:8px">
+    <a href="https://upbhulekh.gov.in" target="_blank" rel="noopener" class="btn-b btn" style="font-size:11px;padding:5px;display:block;text-align:center;text-decoration:none;margin-top:3px">UP Bhulekh - Khatauni</a>
+    <a href="https://upbhunaksha.gov.in" target="_blank" rel="noopener" class="btn-b btn" style="font-size:11px;padding:5px;display:block;text-align:center;text-decoration:none;margin-top:3px">Bhu-Naksha Map</a>
+    <a href="https://ecourts.gov.in" target="_blank" rel="noopener" class="btn-b btn" style="font-size:11px;padding:5px;display:block;text-align:center;text-decoration:none;margin-top:3px">eCourts Cause List Lucknow</a>
+  </div>
+</div>
 </div>
 
-<div class="grid2" style="margin-top:10px">
-<div class="toolCard scrollTarget" id="sec-courtfee">
+<div class="toolCard scrollTarget" id="sec-courtfee" style="margin-top:10px">
   <b>🏛️ Court Fee Calculator UP</b><br>
   <input id="courtFeeAmount" type="number" placeholder="Rashi - 100000" style="margin-top:6px">
   <button class="btn" style="width:100%;margin-top:4px;font-size:11px" onclick="calcCourtFee()">Court Fee + Stamp Duty Nikalo</button>
   <div id="courtFeeResult" style="font-size:11px;margin-top:6px;min-height:60px;background:#fff;padding:6px;border:1px solid #ddd">Rashi dalo - UP Court Fee Act 1870</div>
 </div>
-<div class="toolCard scrollTarget" id="sec-stamp">
-  <b>💰 Stamp Duty + Registration (UP)</b><br>
-  <input id="propertyValue" type="number" placeholder="Property Value (Rs) - 1000000" style="margin-top:6px">
-  <select id="buyerType" style="margin-top:4px">
-    <option value="male">Male Buyer - 7%</option>
-    <option value="female">Female Buyer - 6% + Rebate</option>
-    <option value="joint">Joint (Male+Female) - 6.5% + Rebate</option>
-  </select>
-  <button class="btn" style="width:100%;margin-top:4px;font-size:11px" onclick="calcStampDuty()">Calculate Stamp + Reg</button>
-  <div id="stampResult" style="font-size:11px;margin-top:6px;min-height:60px;background:#fff;padding:6px;border:1px solid #ddd">Enter property value and buyer type</div>
-</div>
 </div>
 
-<div class="grid2" style="margin-top:10px">
-<div class="toolCard scrollTarget" id="sec-circle">
-  <b>📍 Circle Rate Calculator - Lucknow (Auto + Manual)</b><br>
-  <select id="circleZoneType" onchange="toggleCircleZone()" style="margin-top:6px">
-    <option value="manual">✍️ Manual Input (IGRSUP se rate dekh kar daalein)</option>
-    <option value="urban">🏙️ Urban / शहरी - Lucknow City</option>
-    <option value="rural">🌾 Rural / ग्रामीण - Lucknow Villages</option>
-  </select>
-
-  <div id="urbanZoneBox" style="display:none">
-    <select id="urbanZoneSelect" onchange="fillUrbanRate()" style="margin-top:4px">
-      <option value="">-- शहरी इलाका चुनें / Select Urban Area --</option>
-      <option value="gomti_nagar">Gomti Nagar (गोमती नगर) - ₹77,000/sqm</option>
-      <option value="hazratganj">Hazratganj / MG Marg (हज़रतगंज) - ₹76,500/sqm</option>
-      <option value="mahanagar">Mahanagar (महानगर) - ₹53,000/sqm</option>
-      <option value="indira_nagar">Indira Nagar (इंदिरा नगर) - ₹48,000/sqm</option>
-      <option value="aliganj">Aliganj / Sitapur Road (अलीगंज) - ₹42,000/sqm</option>
-      <option value="vibhuti_khand">Vibhuti Khand (विभूति खंड) - ₹42,500/sqm</option>
-      <option value="faizabad_road">Faizabad Road (फैजाबाद रोड) - ₹33,000/sqm</option>
-      <option value="sultanpur_road">Sultanpur Road / Shaheed Path (सुल्तानपुर रोड) - ₹27,500/sqm</option>
-      <option value="general_urban">General Urban Residential (सामान्य शहरी) - ₹22,000/sqm</option>
-    </select>
+<div class="premiumCalc scrollTarget" id="sec-stamp">
+  <div class="premiumCalcHeader">
+    <div class="calcTitle"><span class="icon">💰</span> Stamp Duty + Registration Calculator (UP)</div>
+    <div class="calcSubtitle">Auto + Manual · Male / Female / Joint · IGRSUP Verified Rates</div>
   </div>
+  <div class="premiumCalcBody">
+    <div class="modeToggle">
+      <button class="modeBtn active" id="stampModeAuto" onclick="setStampMode('auto')">🏙️ Auto (Area se rate)</button>
+      <button class="modeBtn" id="stampModeManual" onclick="setStampMode('manual')">✍️ Manual (Khud daalein)</button>
+    </div>
 
-  <div id="ruralZoneBox" style="display:none">
-    <select id="ruralZoneSelect" onchange="fillRuralRate()" style="margin-top:4px">
-      <option value="">-- गाँव चुनें / Select Village --</option>
-      <option value="parvar_highway">Parvar (परवर) - Expressway ke paas - ₹1.30 Cr/ha</option>
-      <option value="pahara">Pahara (पहाड़ा) - Purvanchal Expressway - ₹1 Cr/ha</option>
-      <option value="bhatola">Bhatola (भटोला) - ₹1 Cr/ha (approx)</option>
-      <option value="jaitikeda">Jaitikeda (जयतीकेड़ा) - ₹1 Cr/ha (approx)</option>
-      <option value="neeva">Neeva (नीवां) - ₹1 Cr/ha (approx)</option>
-      <option value="general_rural">General Rural (सामान्य ग्रामीण) - ₹90 Lakh/ha</option>
+    <div id="stampAutoBox">
+      <label>Area Type</label>
+      <select id="stampZoneType" onchange="stampZoneChange()">
+        <option value="urban">🏙️ Urban / शहरी - Lucknow City</option>
+        <option value="rural">🌾 Rural / ग्रामीण - Lucknow Villages</option>
+      </select>
+
+      <label>Area / Locality (Auto Rate)</label>
+      <select id="stampAreaSelect" onchange="stampAreaChange()">
+        <option value="">-- Select Area --</option>
+        <optgroup label="🏙️ Urban Areas">
+          <option value="77000">Gomti Nagar - ₹77,000/sqm</option>
+          <option value="76000">MG Marg / Hazratganj - ₹76,000/sqm</option>
+          <option value="65000">Mahanagar (Upper) - ₹65,000/sqm</option>
+          <option value="53000">Mahanagar (Avg) - ₹53,000/sqm</option>
+          <option value="62000">Indira Nagar (Upper) - ₹62,000/sqm</option>
+          <option value="48000">Indira Nagar (Avg) - ₹48,000/sqm</option>
+          <option value="42500">Vibhuti Khand - ₹42,500/sqm</option>
+          <option value="42000">Aliganj / Sitapur Road - ₹42,000/sqm</option>
+          <option value="39000">Sitapur Road (Lower) - ₹39,000/sqm</option>
+          <option value="36000">Faizabad Road - ₹36,000/sqm</option>
+          <option value="27500">Sultanpur Road / Shaheed Path - ₹27,500/sqm</option>
+          <option value="25000">Alambagh - ₹25,000/sqm</option>
+          <option value="15000">Malihabad - ₹15,000/sqm</option>
+          <option value="22000">General Urban Residential - ₹22,000/sqm</option>
+        </optgroup>
+        <optgroup label="🌾 Rural Villages">
+          <option value="13000">Parvar (Expressway side) - ₹1.30 Cr/ha</option>
+          <option value="10000">Pahara (Mohanlalganj) - ₹1 Cr/ha</option>
+          <option value="9800">Gaura (Mohanlalganj) - ₹98 Lakh/ha</option>
+          <option value="9700">Barkatabad Jahangirabad - ₹97 Lakh/ha</option>
+          <option value="9500">Papanamau (Sadar) - ₹95 Lakh/ha</option>
+          <option value="9100">Danda Sikandarpur - ₹91 Lakh/ha</option>
+          <option value="9000">General Rural - ₹90 Lakh/ha</option>
+        </optgroup>
+      </select>
+      <div class="rateHint" id="stampRateHint">ℹ️ Area चुनें — reference rate auto-fill होगा</div>
+
+      <label>Area (sqm / वर्ग मीटर)</label>
+      <input id="stampAreaSqm" type="number" placeholder="जैसे 100" oninput="stampAutoCalc()">
+
+      <label>Property Value (₹) - Auto Calculated</label>
+      <input id="stampAutoValue" type="number" placeholder="Auto fill हो जाएगा" readonly style="background:#f4f1ea;font-weight:700;color:#8b0000">
+    </div>
+
+    <div id="stampManualBox" style="display:none">
+      <label>Property Value (₹) - खुद डालें</label>
+      <input id="stampManualValue" type="number" placeholder="जैसे 1000000" oninput="stampManualCalc()">
+      <div class="rateHint">ℹ️ IGRSUP से exact value देखकर डालें</div>
+    </div>
+
+    <label>Buyer Type / खरीदार</label>
+    <select id="stampBuyer" onchange="stampCalculate()">
+      <option value="male">Male - 7% Stamp + 1% Reg</option>
+      <option value="female">Female - 6% Stamp + 1% Reg (₹10,000 Rebate)</option>
+      <option value="joint">Joint (Male + Female) - 6.5% + 1% Reg (₹5,000 Rebate)</option>
     </select>
-    <small class="small" style="text-align:left;color:#8b0000">⚠️ ग्रामीण दर प्रति हेक्टेयर है — tool खुद sqm में बदल देगा (÷10000)</small>
-  </div>
 
-  <input id="areaNameInput" placeholder="Area / Village Name (जैसे: Gomti Nagar, Pahara)" style="margin-top:6px">
-  <input id="areaStateInput" placeholder="State (जैसे: Uttar Pradesh)" value="Uttar Pradesh" style="margin-top:4px">
-  <input id="areaSqm" type="number" placeholder="Area (sqm) - जैसे 100" style="margin-top:6px">
-  <input id="circleRateInput" type="number" placeholder="Circle Rate (Rs/sqm) - auto ya manual" style="margin-top:4px">
-  <button class="btn" style="width:100%;margin-top:4px;font-size:11px" onclick="calcCircleRateManual()">Calculate Property Value</button>
-  <div id="circleRateResult" style="font-size:11px;margin-top:6px;min-height:60px;background:#fff;padding:6px;border:1px solid #ddd">Area type chunein, area daalein, rate auto ya manual daalein</div>
-  <a href="https://igrsup.gov.in" target="_blank" rel="noopener" class="btn-b btn" style="font-size:11px;padding:5px;display:block;text-align:center;text-decoration:none;margin-top:6px">🔗 IGRSUP Official - Exact Rate Verify Karein</a>
-  <small class="small" style="text-align:left;color:#8b0000">⚠️ Reference rates only — actual rate IGRSUP par verify karein.</small>
+    <button class="calcBtn" onclick="stampCalculate()">📊 Calculate Stamp Duty + Registration</button>
+
+    <div id="stampPremiumResult" class="calcResult">
+      Property value डालें और Calculate दबाएँ — Stamp Duty, Registration Fee, Rebate और Total सब दिखेगा।
+    </div>
+
+    <div class="updateBanner">
+      <span class="bIcon">📅</span>
+      <span><b>Rates 2026 के लिए:</b> UP सरकार circle rate हर साल अगस्त में संशोधित करती है। Latest rate verify करने के लिए IGRSUP देखें।</span>
+    </div>
+
+    <a href="https://igrsup.gov.in" target="_blank" rel="noopener" class="igrsupBtn">🔗 IGRSUP Official - Exact Rate Verify करें</a>
+  </div>
 </div>
-<div class="toolCard">
-  <b>📊 Quick Circle Rate (Simple)</b><br>
-  <select id="lucknowArea" style="margin-top:6px">
-    <option value="15000">Malihabad - 15000/sqm</option>
-    <option value="25000">Alambagh - 25000</option>
-    <option value="35000">Gomti Nagar - 35000</option>
-    <option value="45000">Hazratganj - 45000</option>
-    <option value="60000">Gomti Ext - 60000</option>
-  </select>
-  <input id="simpleAreaSqm" type="number" placeholder="Area sqm - 100" style="margin-top:4px">
-  <button class="btn" style="width:100%;margin-top:4px;font-size:11px" onclick="calcCircleRateSimple()">Quick Value + Registry</button>
-  <div id="circleRateSimpleResult" style="font-size:11px;margin-top:6px;min-height:40px;background:#fff;padding:6px;border:1px solid #ddd">Area dalo - Circle Rate + 8% Stamp</div>
-</div>
-</div>
+
+<div class="premiumCalc scrollTarget" id="sec-circle">
+  <div class="premiumCalcHeader">
+    <div class="calcTitle"><span class="icon">📍</span> Circle Rate Calculator - Lucknow</div>
+    <div class="calcSubtitle">Urban / Rural / Manual · Auto rate fill · IGRSUP verified</div>
+  </div>
+  <div class="premiumCalcBody">
+    <div class="modeToggle">
+      <button class="modeBtn active" id="circleModeAuto" onclick="setCircleMode('auto')">🏙️ Auto (Area se)</button>
+      <button class="modeBtn" id="circleModeManual" onclick="setCircleMode('manual')">✍️ Manual</button>
+    </div>
+
+    <div id="circleAutoBox">
+      <label>Area Type</label>
+      <select id="circleZoneType" onchange="circleZoneChange()">
+        <option value="urban">🏙️ Urban / शहरी - Lucknow City</option>
+        <option value="rural">🌾 Rural / ग्रामीण - Lucknow Villages</option>
+      </select>
+
+      <label>Select Area / Locality</label>
+      <select id="circleAreaSelect" onchange="circleAreaChange()">
+        <option value="">-- Select Area --</option>
+        <optgroup label="🏙️ Urban Areas">
+          <option value="77000">Gomti Nagar - ₹77,000/sqm</option>
+          <option value="76000">MG Marg / Hazratganj - ₹76,000/sqm</option>
+          <option value="65000">Mahanagar (Upper) - ₹65,000/sqm</option>
+          <option value="53000">Mahanagar (Avg) - ₹53,000/sqm</option>
+          <option value="62000">Indira Nagar (Upper) - ₹62,000/sqm</option>
+          <option value="48000">Indira Nagar (Avg) - ₹48,000/sqm</option>
+          <option value="42500">Vibhuti Khand - ₹42,500/sqm</option>
+          <option value="42000">Aliganj / Sitapur Road - ₹42,000/sqm</option>
+          <option value="36000">Faizabad Road - ₹36,000/sqm</option>
+          <option value="27500">Sultanpur Road - ₹27,500/sqm</option>
+          <option value="25000">Alambagh - ₹25,000/sqm</option>
+          <option value="15000">Malihabad - ₹15,000/sqm</option>
+          <option value="22000">General Urban - ₹22,000/sqm</option>
+        </optgroup>
+        <optgroup label="🌾 Rural Villages">
+          <option value="13000">Parvar (Expressway) - ₹1.30 Cr/ha</option>
+          <option value="10000">Pahara (Mohanlalganj) - ₹1 Cr/ha</option>
+          <option value="9800">Gaura - ₹98 Lakh/ha</option>
+          <option value="9700">Barkatabad - ₹97 Lakh/ha</option>
+          <option value="9500">Papanamau - ₹95 Lakh/ha</option>
+          <option value="9000">General Rural - ₹90 Lakh/ha</option>
+        </optgroup>
+      </select>
+      <div class="rateHint" id="circleRateHint">ℹ️ Area चुनें — rate auto-fill होगा</div>
+    </div>
+
+    <div id="circleManualBox" style="display:none">
+      <label>Circle Rate (₹/sqm) - खुद डालें</label>
+      <input id="circleManualRate" type="number" placeholder="जैसे 45000" oninput="circleManualCalc()">
+      <div class="rateHint">ℹ️ IGRSUP से exact rate देखकर डालें</div>
+    </div>
+
+    <label>Area (sqm / वर्ग मीटर)</label>
+    <input id="circleAreaSqm" type="number" placeholder="जैसे 100" oninput="circleCalculate()">
+
+    <label>Area / Village Name (record के लिए)</label>
+    <input id="circleAreaName" placeholder="जैसे Gomti Nagar, Lucknow">
+
+    <button class="calcBtn" onclick="circleCalculate()">📊 Circle Rate + Property Value Calculate</button>
+
+    <div id="circlePremiumResult" class="calcResult">
+      Area और rate डालें — Property Value + अनुमानित Registry Kharch दिखेगा।
+    </div>
+
+    <div class="updateBanner">
+      <span class="bIcon">📅</span>
+      <span><b>Rates 2026 के लिए:</b> UP का uniform circle rate system लागू हो रहा है। Latest rate verify करने के लिए IGRSUP देखें।</span>
+    </div>
+
+    <a href="https://igrsup.gov.in" target="_blank" rel="noopener" class="igrsupBtn">🔗 IGRSUP Official - Exact Rate Verify करें</a>
+  </div>
 </div>
 
 <div class="grid2 scrollTarget" id="sec-drafting">
@@ -415,7 +558,7 @@ footer a:hover{text-decoration:underline}
 <button class="btn" onclick="generateDraft()" style="flex:1">प्रारूप तैयार करें</button>
 <button class="btn-b btn" onclick="clearForm()">Clear</button>
 </div>
-<small class="small">Documentation assistance based on standard formats - Free 2 Clauses / Pro 6 Clauses</small>
+<small class="small">Documentation assistance based on standard formats</small>
 </div>
 <div class="card">
 <h3>📄 अंतिम प्रारूप - Court Ready</h3>
@@ -430,17 +573,28 @@ footer a:hover{text-decoration:underline}
 </div>
 </div>
 
-<!-- ADSENSE AD 3 -->
-<div class="adBox">
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<div class="adBox" id="adSlotBottom">
+  <div class="adBoxTopBar">
+    <span>🎯 Pro Feature Highlight</span>
+    <span class="adPulse"><span class="dot"></span> Limited Offer</span>
+  </div>
+  <div class="adBoxInner">
+    <div class="adBoxIcon">🔓</div>
+    <div class="adBoxContent">
+      <span class="adBoxLabel">Pro Unlock</span>
+      <div class="adBoxTitle" id="adBotTitle">Complete Court-Ready Draft Bundle</div>
+      <div class="adBoxDesc" id="adBotDesc">Bainama, Will aur legal notice के 6 clauses unlock करें — Rs 49 lifetime access।</div>
+      <a class="adBoxCTA" onclick="unlockPro()" style="cursor:pointer">☕ Rs 49 - Pro Unlock</a>
+      <div class="adBoxAdSpace" id="adBotSpace">Ad Space Available · 728x90 Responsive</div>
+    </div>
+  </div>
 </div>
 
 <div class="card">
 <h3>📌 मुख्य टूल्स - Lucknow के लिए - 22 Drafting + BNS/BNSS/BSA Converter + Purane Tools</h3>
 <div class="grid2" style="font-size:12px;line-height:2">
-<div><b>🔥 New Criminal Law 2024:</b><br>• IPC to BNS Converter 302=103, 376=64, 420=318<br>• CrPC to BNSS 156(3)=175(3), 438=482, 482=528<br>• BSA 63 Electronic Evidence (IEA 65B)<br>• Bail Application 480/482 BNSS Format<br>• 175(3) BNSS Prachana Patra, Complaint 210 BNSS<br><br><b>Converter Tools:</b><br>• Mangal to KrutiDev / KrutiDev to Mangal (Type + File Upload)<br>• Photo to PDF Court Size A4 200-500KB<br>• PDF Compressor Court Size</div>
-<div><b>Zameen / Revenue:</b><br>• Khatauni Nakal UP Bhulekh - upbhulekh.gov.in<br>• Gata / Khasra se Malik - Bhu-Naksha<br>• Circle Rate Calculator (Auto Urban/Rural + Manual + IGRSUP Link)<br>• Daakhil Kharij, Chahardi Auto Writer<br><br><b>Court / Fees:</b><br>• Court Fee Calculator UP - UP Court Fee Act 1870<br>• Stamp Duty UP - Male 7% / Female 6% / Joint 6.5% + 1% Reg<br>• Bainama Pro 6 Clauses, Kirayanama, Will, Affidavit<br>• eCourts Cause List Lucknow</div>
+<div><b>🔥 New Criminal Law 2024:</b><br>• IPC to BNS Converter 302=103, 376=64, 420=318<br>• CrPC to BNSS 156(3)=175(3), 438=482, 482=528<br>• BSA 63 Electronic Evidence (IEA 65B)<br>• Bail Application 480/482 BNSS Format<br>• 175(3) BNSS Prachana Patra, Complaint 210 BNSS<br><br><b>Converter Tools:</b><br>• Mangal to KrutiDev / KrutiDev to Mangal<br>• Photo to PDF Court Size A4 200-500KB</div>
+<div><b>Zameen / Revenue:</b><br>• Khatauni Nakal UP Bhulekh - upbhulekh.gov.in<br>• Gata / Khasra se Malik - Bhu-Naksha<br>• Circle Rate Calculator (Auto + Manual + IGRSUP)<br>• Stamp Duty Calculator (Auto + Manual)<br><br><b>Court / Fees:</b><br>• Court Fee Calculator UP - UP Court Fee Act 1870<br>• Stamp Duty UP - Male 7% / Female 6% / Joint 6.5%<br>• Bainama Pro 6 Clauses, Kirayanama, Will, Affidavit<br>• eCourts Cause List Lucknow</div>
 </div>
 </div>
 
@@ -458,8 +612,7 @@ footer a:hover{text-decoration:underline}
 <a href="upi://pay?pa=icfai.sandeep@oksbi&pn=LegalTools%20Lucknow&am=49&cu=INR&tn=Pro%20Unlock%20Rs49" class="btn" style="background:#8b0000;font-size:12px;padding:8px 16px;display:inline-block;text-decoration:none">📱 UPI App Se Pay Karo - Rs 49</a>
 <button class="btn-b btn" style="font-size:12px;padding:8px 16px" onclick="unlockPro()">✅ Maine Pay Kiya - Pro Unlock Karo</button>
 </div>
-<div style="margin-top:10px;font-size:10px;color:#888">PhonePe / Google Pay / Paytm / BHIM se scan karo - Payment seedha icfai.sandeep@oksbi par ayega<br>Scan karne ke baad "I Paid" button dabao - Site PRO ho jayegi<br><strong style="color:#8b0000">Note: Yeh voluntary contribution hai. Payment final hai, koi refund nahi.</strong></div>
-<div style="margin-top:10px;background:#2b1d14;color:#f4d7b0;padding:8px;border-radius:20px;display:inline-block;font-size:10px">☕ 1 Coffee = Rs 49 = 6 Clauses + BNS Bare Act + Court Seal - Lifetime</div>
+<div style="margin-top:10px;font-size:10px;color:#888">PhonePe / Google Pay / Paytm / BHIM se scan karo - Payment seedha icfai.sandeep@oksbi par ayega<br><strong style="color:#8b0000">Note: Yeh voluntary contribution hai. Payment final hai, koi refund nahi.</strong></div>
 </div>
 
 </div>
@@ -485,7 +638,7 @@ SEO: Lucknow BNS BNSS BSA converter, IPC 302 = BNS 103, CrPC 156(3)=BNSS 175(3),
 <div style="background:#1a1a1a;color:#fff;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:6px">
 <b style="font-size:13px">सहायक - LegalTools Lucknow</b>
 <span style="display:flex;align-items:center;gap:6px">
-<select id="voiceLang" title="Voice language" style="width:auto;margin:0;padding:2px 4px;font-size:10px;background:#fff;color:#000;border-radius:3px">
+<select id="voiceLang" style="width:auto;margin:0;padding:2px 4px;font-size:10px;background:#fff;color:#000;border-radius:3px">
 <option value="hi-IN">हिंदी</option>
 <option value="en-IN">English</option>
 <option value="ur-IN">اردو</option>
@@ -497,7 +650,7 @@ SEO: Lucknow BNS BNSS BSA converter, IPC 302 = BNS 103, CrPC 156(3)=BNSS 175(3),
 <div id="voiceStatus" style="display:none;font-size:11px;color:#8b0000;padding:4px 10px;background:#fff2f2;border-top:1px solid #f0d0d0">🎤 सुन रहा हूँ... बोलिए</div>
 <div style="padding:8px;background:#fff;border-top:1px solid #ddd">
 <div style="display:flex;gap:6px;align-items:center">
-<button id="micBtn" onclick="toggleVoice()" class="btn" title="Voice typing" style="padding:10px 13px;background:#8b0000;font-size:15px">🎤</button>
+<button id="micBtn" onclick="toggleVoice()" class="btn" style="padding:10px 13px;background:#8b0000;font-size:15px">🎤</button>
 <input id="chatInput" placeholder="पूछें - IPC 302 = BNS?" style="flex:1;padding:10px;margin:0" onkeypress="if(event.key==='Enter')sendChat()" oninput="onChatInput()">
 <button onclick="sendChat()" class="btn" style="padding:10px 14px">➤</button>
 </div>
@@ -509,32 +662,212 @@ SEO: Lucknow BNS BNSS BSA converter, IPC 302 = BNS 103, CrPC 156(3)=BNSS 175(3),
 </div>
 </div>
 
-<!-- PWA INSTALL BANNER -->
-<div id="pwaBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;
-     background:#1a1a1a;color:#fff;padding:12px 16px;z-index:99999;
-     justify-content:space-between;align-items:center;gap:12px;
-     box-shadow:0 -4px 20px rgba(0,0,0,.3)">
+<div id="pwaBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;color:#fff;padding:12px 16px;z-index:99999;justify-content:space-between;align-items:center;gap:12px;box-shadow:0 -4px 20px rgba(0,0,0,.3)">
   <div style="font-size:13px;line-height:1.4">
     <strong>📱 LegalTools App इंस्टॉल करें</strong><br>
     <small style="color:#d4c9b0">ऑफलाइन भी काम करेगा - फ्री</small>
   </div>
   <div style="display:flex;gap:8px">
-    <button onclick="installPWA()" style="background:#8b0000;color:#fff;border:none;
-            padding:8px 16px;border-radius:4px;font-weight:600;cursor:pointer;
-            font-size:12px">इंस्टॉल</button>
-    <button onclick="dismissPWA()" style="background:transparent;color:#d4c9b0;
-            border:1px solid #555;padding:8px 12px;border-radius:4px;cursor:pointer;
-            font-size:12px">बाद में</button>
+    <button onclick="installPWA()" style="background:#8b0000;color:#fff;border:none;padding:8px 16px;border-radius:4px;font-weight:600;cursor:pointer;font-size:12px">इंस्टॉल</button>
+    <button onclick="dismissPWA()" style="background:transparent;color:#d4c9b0;border:1px solid #555;padding:8px 12px;border-radius:4px;cursor:pointer;font-size:12px">बाद में</button>
   </div>
 </div>
 
 <script>
-/* ============================================================
-   LEGALTOOLS LUCKNOW - FULL WORKING SCRIPT (MERGED)
-   ============================================================ */
-
 var currentLang = localStorage.getItem('draft_lang') || 'hi';
 var isPro = localStorage.getItem('legaltools_pro') === '1';
+
+var AD_TOP_CONTENT = [
+  { title: "Lucknow के भरोसेमंद Legal Services", desc: "Property registration, court documentation, aur legal consultation — verified professionals से सीधे जुड़ें।", cta: "📩 संपर्क करें", link: "mailto:sahayakkanoon@gmail.com?subject=Legal%20Services%20Enquiry" },
+  { title: "Property Registration Help", desc: "IGRSUP registration, stamp duty, circle rate — step-by-step guidance with documentation support.", cta: "📩 Enquiry Bhejein", link: "mailto:sahayakkanoon@gmail.com?subject=Property%20Registration" },
+  { title: "Document Drafting Service", desc: "Bainama, kirayanama, will aur legal notice — court-ready formats expert से draft karwayein।", cta: "📝 Draft Enquiry", link: "mailto:sahayakkanoon@gmail.com?subject=Drafting%20Service" },
+  { title: "Advocate Consultation", desc: "Lucknow me verified advocates से online consultation. 30 min session।", cta: "👨‍⚖️ Book Session", link: "mailto:sahayakkanoon@gmail.com?subject=Advocate%20Consultation" }
+];
+var AD_MID_CONTENT = [
+  { title: "Legal Documentation made simple", desc: "Bainama, kirayanama, will aur affidavit — सब court-ready formats में।", cta: "📝 Draft बनाएँ", action: "drafting" },
+  { title: "Land Records at your fingertips", desc: "Khatauni, Bhu-Naksha, Gata/Khasra — UP Bhulekh से सीधे nakal download करें।", cta: "🌾 Khatauni Dekhein", action: "bhulekh" },
+  { title: "Court Fee & Stamp Calculator", desc: "UP Court Fee Act 1870 ke according court fee और stamp duty instantly calculate करें।", cta: "💰 Calculator Kholen", action: "courtfee" },
+  { title: "BNS/BNSS Section Converter", desc: "1 July 2024 se naye criminal laws लागू — IPC 302 = BNS 103, CrPC 156(3) = BNSS 175(3)।", cta: "⚖️ Converter Kholen", action: "converter" }
+];
+var AD_BOT_CONTENT = [
+  { title: "Complete Court-Ready Draft Bundle", desc: "Bainama, Will aur legal notice के 6 clauses unlock करें — Rs 49 lifetime access।", cta: "☕ Rs 49 - Pro Unlock" },
+  { title: "Pro Format - 6 Clauses Unlocked", desc: "Court seal format, BNS Bare Act reference aur extra clauses — lifetime access के साथ।", cta: "🔓 Pro Unlock - Rs 49" },
+  { title: "Support LegalTools Lucknow", desc: "Aapke Rs 49 se ही यह platform free रहता है — Pro features unlock करें।", cta: "☕ Support करें" },
+  { title: "Free Tools Forever", desc: "18+ formats, BNS converter, Court Fee calculator — सब हमेशा free रहेगा।", cta: "🎯 Pro Dekhein" }
+];
+var adTopIdx = 0, adMidIdx = 0, adBotIdx = 0;
+
+function rotateAdSlots() {
+  adTopIdx = (adTopIdx + 1) % AD_TOP_CONTENT.length;
+  var t = AD_TOP_CONTENT[adTopIdx];
+  var elT = document.getElementById('adTopTitle'), elD = document.getElementById('adTopDesc'), elC = document.querySelector('#adSlotTop .adBoxCTA');
+  if (elT && elD && elC) {
+    elT.style.opacity = '0'; elD.style.opacity = '0';
+    setTimeout(function () {
+      elT.textContent = t.title; elD.textContent = t.desc; elC.textContent = t.cta; elC.href = t.link;
+      elT.style.transition = 'opacity .5s'; elD.style.transition = 'opacity .5s';
+      elT.style.opacity = '1'; elD.style.opacity = '1';
+    }, 300);
+  }
+  adMidIdx = (adMidIdx + 1) % AD_MID_CONTENT.length;
+  var m = AD_MID_CONTENT[adMidIdx];
+  var elMT = document.getElementById('adMidTitle'), elMD = document.getElementById('adMidDesc'), elMC = document.querySelector('#adSlotMiddle .adBoxCTA');
+  if (elMT && elMD && elMC) {
+    elMT.style.opacity = '0'; elMD.style.opacity = '0';
+    setTimeout(function () {
+      elMT.textContent = m.title; elMD.textContent = m.desc; elMC.textContent = m.cta;
+      elMT.style.transition = 'opacity .5s'; elMD.style.transition = 'opacity .5s';
+      elMT.style.opacity = '1'; elMD.style.opacity = '1';
+    }, 300);
+  }
+  adBotIdx = (adBotIdx + 1) % AD_BOT_CONTENT.length;
+  var b = AD_BOT_CONTENT[adBotIdx];
+  var elBT = document.getElementById('adBotTitle'), elBD = document.getElementById('adBotDesc'), elBC = document.querySelector('#adSlotBottom .adBoxCTA');
+  if (elBT && elBD && elBC) {
+    elBT.style.opacity = '0'; elBD.style.opacity = '0';
+    setTimeout(function () {
+      elBT.textContent = b.title; elBD.textContent = b.desc; elBC.textContent = b.cta;
+      elBT.style.transition = 'opacity .5s'; elBD.style.transition = 'opacity .5s';
+      elBT.style.opacity = '1'; elBD.style.opacity = '1';
+    }, 300);
+  }
+}
+
+/* ============ STAMP DUTY CALCULATOR ============ */
+var stampMode = 'auto';
+function setStampMode(mode) {
+  stampMode = mode;
+  document.getElementById('stampModeAuto').classList.toggle('active', mode === 'auto');
+  document.getElementById('stampModeManual').classList.toggle('active', mode === 'manual');
+  document.getElementById('stampAutoBox').style.display = (mode === 'auto') ? 'block' : 'none';
+  document.getElementById('stampManualBox').style.display = (mode === 'manual') ? 'block' : 'none';
+  stampCalculate();
+}
+function stampZoneChange() {
+  var zone = document.getElementById('stampZoneType').value;
+  var urbanOpts = document.querySelectorAll('#stampAreaSelect optgroup[label*="Urban"] option');
+  var ruralOpts = document.querySelectorAll('#stampAreaSelect optgroup[label*="Rural"] option');
+  urbanOpts.forEach(function (o) { o.style.display = (zone === 'urban') ? '' : 'none'; });
+  ruralOpts.forEach(function (o) { o.style.display = (zone === 'rural') ? '' : 'none'; });
+  document.getElementById('stampAreaSelect').value = '';
+  document.getElementById('stampRateHint').textContent = 'ℹ️ Area चुनें — reference rate auto-fill होगा';
+  document.getElementById('stampAutoValue').value = '';
+}
+function stampAreaChange() {
+  var sel = document.getElementById('stampAreaSelect');
+  var rate = parseFloat(sel.value);
+  if (!rate) { document.getElementById('stampRateHint').textContent = 'ℹ️ Area चुनें — reference rate auto-fill होगा'; return; }
+  var areaTxt = sel.options[sel.selectedIndex].text;
+  document.getElementById('stampRateHint').textContent = '✅ ' + areaTxt + ' · अब area (sqm) डालें';
+  stampAutoCalc();
+}
+function stampAutoCalc() {
+  if (stampMode !== 'auto') return;
+  var rate = parseFloat(document.getElementById('stampAreaSelect').value);
+  var area = parseFloat(document.getElementById('stampAreaSqm').value);
+  if (rate && area && area > 0) {
+    document.getElementById('stampAutoValue').value = Math.round(rate * area);
+  } else {
+    document.getElementById('stampAutoValue').value = '';
+  }
+  stampCalculate();
+}
+function stampManualCalc() {
+  if (stampMode !== 'manual') return;
+  stampCalculate();
+}
+function stampCalculate() {
+  var value;
+  if (stampMode === 'auto') {
+    value = parseFloat(document.getElementById('stampAutoValue').value);
+  } else {
+    value = parseFloat(document.getElementById('stampManualValue').value);
+  }
+  var buyerType = document.getElementById('stampBuyer').value;
+  var el = document.getElementById('stampPremiumResult');
+  if (!value || value <= 0) {
+    el.innerHTML = '💡 Property value डालें और Calculate दबाएँ — Stamp Duty, Registration Fee, Rebate और Total सब दिखेगा।';
+    return;
+  }
+  var stampRate, rebate = 0, typeLabel;
+  if (buyerType === 'male') { stampRate = 0.07; typeLabel = 'Male / पुरुष'; }
+  else if (buyerType === 'female') { stampRate = 0.06; rebate = 10000; typeLabel = 'Female / महिला'; }
+  else { stampRate = 0.065; rebate = 5000; typeLabel = 'Joint (Male + Female)'; }
+  var stampDuty = value * stampRate;
+  var regFee = value * 0.01;
+  var total = stampDuty + regFee - rebate;
+  if (total < 0) total = stampDuty + regFee;
+  el.innerHTML =
+    '<div style="font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:8px">📊 Detailed Breakdown</div>' +
+    '<b>Buyer Type:</b> ' + typeLabel + '<br>' +
+    '<b>Property Value:</b> ₹' + Math.round(value).toLocaleString('en-IN') + '<br>' +
+    '<b>Stamp Duty (' + (stampRate * 100) + '%):</b> ₹' + Math.round(stampDuty).toLocaleString('en-IN') + '<br>' +
+    '<b>Registration (1%):</b> ₹' + Math.round(regFee).toLocaleString('en-IN') +
+    (rebate > 0 ? '<br><b>Rebate:</b> -₹' + rebate.toLocaleString('en-IN') : '') +
+    '<br><hr style="margin:8px 0;border:none;border-top:1px dashed #d4c9b0">' +
+    '<b style="font-size:15px;color:#8b0000">💰 Total Payable: ₹' + Math.round(total).toLocaleString('en-IN') + '</b>' +
+    '<br><span style="color:#8b0000;font-size:10px">⚠️ Indicative only. IGRSUP par exact amount verify करें।</span>';
+}
+
+/* ============ CIRCLE RATE CALCULATOR ============ */
+var circleMode = 'auto';
+function setCircleMode(mode) {
+  circleMode = mode;
+  document.getElementById('circleModeAuto').classList.toggle('active', mode === 'auto');
+  document.getElementById('circleModeManual').classList.toggle('active', mode === 'manual');
+  document.getElementById('circleAutoBox').style.display = (mode === 'auto') ? 'block' : 'none';
+  document.getElementById('circleManualBox').style.display = (mode === 'manual') ? 'block' : 'none';
+  circleCalculate();
+}
+function circleZoneChange() {
+  var zone = document.getElementById('circleZoneType').value;
+  var urbanOpts = document.querySelectorAll('#circleAreaSelect optgroup[label*="Urban"] option');
+  var ruralOpts = document.querySelectorAll('#circleAreaSelect optgroup[label*="Rural"] option');
+  urbanOpts.forEach(function (o) { o.style.display = (zone === 'urban') ? '' : 'none'; });
+  ruralOpts.forEach(function (o) { o.style.display = (zone === 'rural') ? '' : 'none'; });
+  document.getElementById('circleAreaSelect').value = '';
+  document.getElementById('circleRateHint').textContent = 'ℹ️ Area चुनें — rate auto-fill होगा';
+}
+function circleAreaChange() {
+  var sel = document.getElementById('circleAreaSelect');
+  var rate = parseFloat(sel.value);
+  if (!rate) { document.getElementById('circleRateHint').textContent = 'ℹ️ Area चुनें — rate auto-fill होगा'; return; }
+  document.getElementById('circleRateHint').textContent = '✅ ' + sel.options[sel.selectedIndex].text;
+  circleCalculate();
+}
+function circleManualCalc() { if (circleMode === 'manual') circleCalculate(); }
+function circleCalculate() {
+  var rate, areaName;
+  if (circleMode === 'auto') {
+    rate = parseFloat(document.getElementById('circleAreaSelect').value);
+    var sel = document.getElementById('circleAreaSelect');
+    areaName = sel.value ? sel.options[sel.selectedIndex].text.split(' - ')[0] : '-';
+  } else {
+    rate = parseFloat(document.getElementById('circleManualRate').value);
+    areaName = document.getElementById('circleAreaName').value.trim() || '-';
+  }
+  var area = parseFloat(document.getElementById('circleAreaSqm').value);
+  var el = document.getElementById('circlePremiumResult');
+  if (!rate || !area || area <= 0) {
+    el.innerHTML = '💡 Area और rate डालें — Property Value + अनुमानित Registry Kharch दिखेगा।';
+    return;
+  }
+  var value = rate * area;
+  var sM = value * 0.07 + value * 0.01;
+  var sF = value * 0.06 + value * 0.01 - 10000;
+  if (sF < 0) sF = value * 0.06 + value * 0.01;
+  el.innerHTML =
+    '<div style="font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:8px">📊 Circle Rate Breakdown</div>' +
+    '<b>Area Name:</b> ' + areaName + '<br>' +
+    '<b>Circle Rate:</b> ₹' + rate.toLocaleString('en-IN') + '/sqm<br>' +
+    '<b>Area:</b> ' + area + ' sqm<br>' +
+    '<hr style="margin:8px 0;border:none;border-top:1px dashed #d4c9b0">' +
+    '<b style="font-size:14px;color:#8b0000">Property Value: ₹' + Math.round(value).toLocaleString('en-IN') + '</b><br>' +
+    '<hr style="margin:8px 0;border:none;border-top:1px dashed #d4c9b0">' +
+    '<b>Purush kharidaar (Male):</b> ₹' + Math.round(sM).toLocaleString('en-IN') + '<br>' +
+    '<b>Mahila kharidaar (Female):</b> ₹' + Math.round(sF).toLocaleString('en-IN') + '<br>' +
+    '<span style="color:#8b0000;font-size:10px">⚠️ Reference rates only. Actual rate IGRSUP par verify karein।</span>';
+}
 
 var LANG = {
   hi: {
@@ -564,8 +897,6 @@ function setLang(l) {
   document.getElementById('btnEn').classList.toggle('active', l === 'en');
   if (document.getElementById('finalOut').innerText.length > 20) generateDraft();
 }
-
-/* SMART TAB JUMP */
 function smartJump(sectionId, tabEl) {
   var el = document.getElementById(sectionId);
   if (!el) return;
@@ -574,13 +905,11 @@ function smartJump(sectionId, tabEl) {
   if (tabEl) tabEl.classList.add('active');
   setTimeout(function () { el.style.transition = 'box-shadow .3s'; el.style.boxShadow = '0 0 0 3px rgba(139,0,0,.25)'; setTimeout(function(){ el.style.boxShadow = ''; }, 1200); }, 400);
 }
-
 function scrollToConverter() {
   var el = document.getElementById('ipcInput');
   if (el) { el.scrollIntoView({behavior:'smooth',block:'center'}); setTimeout(function(){el.focus();},400); }
 }
 
-/* MANGAL / KRUTIDEV */
 var mangalMode = 'type';
 function mangalTab(mode) {
   mangalMode = mode;
@@ -589,7 +918,6 @@ function mangalTab(mode) {
   if (mode === 'type') { typeDiv.style.display = 'block'; upDiv.style.display = 'none'; }
   else { typeDiv.style.display = 'none'; upDiv.style.display = 'block'; }
 }
-
 var mangalFileText = '';
 function handleMangalFile(event) {
   var file = event.target.files[0];
@@ -610,7 +938,6 @@ function handleMangalFile(event) {
   reader.onerror = function () { st.style.color = '#8b0000'; st.innerText = '❌ File read nahi ho payi.'; };
   reader.readAsText(file, 'UTF-8');
 }
-
 function convertFileMangalToKruti() {
   var txt = document.getElementById('mangalFileInput').value;
   if (!txt.trim()) { alert('Pehle file upload karein ya text paste karein'); return; }
@@ -738,7 +1065,6 @@ function convertIPCtoBNS() {
     r.innerText = '❌ ' + raw + ' ka data nahi mila.\nTry: IPC: 302, 307, 376, 420, 498A, 34, 120B, 304B, 354\nCrPC: 156(3), 200, 437, 438, 482, 125, 41, 50, 57\nIEA: 65B, 32, 45, 101, 114';
   }
 }
-
 function convertBNStoIPC() {
   var bns = document.getElementById('bnsInput').value.trim().replace(/BNS\s*|BNSS\s*|BSA\s*/gi, '').trim();
   var r = document.getElementById('converterResult');
@@ -755,7 +1081,6 @@ function convertBNStoIPC() {
     r.innerText = '❌ ' + bns + ' nahi mila. IPC/CrPC/IEA number try karo.';
   }
 }
-
 function quickConvert(s) {
   document.getElementById('ipcInput').value = s;
   convertIPCtoBNS();
@@ -838,7 +1163,6 @@ function copyKruti() {
   catch (e) { navigator.clipboard && navigator.clipboard.writeText(el.value); alert('✅ Copied'); }
 }
 
-/* PHOTO TO PDF */
 function dataURLtoUint8(dataUrl) {
   var b64 = dataUrl.split(',')[1], bin = atob(b64), u8 = new Uint8Array(bin.length);
   for (var i = 0; i < bin.length; i++) u8[i] = bin.charCodeAt(i);
@@ -917,7 +1241,6 @@ async function convertPhotoToPDF() {
   st.innerText = '✅ PDF ready - ' + jpegs.length + ' page - A4 Court Size (' + Math.round(blob.size / 1024) + ' KB)';
 }
 
-/* COURT FEE */
 function calcCourtFee() {
   var v = parseFloat(document.getElementById('courtFeeAmount').value);
   var el = document.getElementById('courtFeeResult');
@@ -931,105 +1254,13 @@ function calcCourtFee() {
   el.innerHTML = '<b>Dava Mulya:</b> ₹' + v.toLocaleString('en-IN') + '<br><b>Court Fee (' + slab + '):</b> ₹' + Math.round(fee).toLocaleString('en-IN') + '<br><b>Registration (1%):</b> ₹' + Math.round(regFee).toLocaleString('en-IN') + '<br><hr style="margin:5px 0"><b>Total (indicative):</b> ₹' + Math.round(fee + regFee).toLocaleString('en-IN') + '<br><span style="color:#8b0000">Yeh sirf andaza hai. UP Court Fees Act 1870 ke anusar vakil se confirm karein.</span>';
 }
 
-/* STAMP DUTY */
-function calcStampDuty() {
-  var value = parseFloat(document.getElementById('propertyValue').value);
-  var buyerType = document.getElementById('buyerType').value;
-  var el = document.getElementById('stampResult');
-  if (!value || value <= 0) { el.innerText = 'Enter valid property value (e.g. 1000000)'; return; }
-  var stampRate, rebate = 0;
-  if (buyerType === 'male') stampRate = 0.07;
-  else if (buyerType === 'female') { stampRate = 0.06; rebate = 10000; }
-  else if (buyerType === 'joint') { stampRate = 0.065; rebate = 5000; }
-  var stampDuty = value * stampRate;
-  var regFee = value * 0.01;
-  var total = stampDuty + regFee - rebate;
-  if (total < 0) total = stampDuty + regFee;
-  var typeLabel = buyerType === 'male' ? 'Male' : (buyerType === 'female' ? 'Female' : 'Joint');
-  el.innerHTML =
-    '<b>Buyer Type:</b> ' + typeLabel + '<br>' +
-    '<b>Property Value:</b> ₹' + Math.round(value).toLocaleString('en-IN') + '<br>' +
-    '<b>Stamp Duty (' + (stampRate * 100) + '%):</b> ₹' + Math.round(stampDuty).toLocaleString('en-IN') + '<br>' +
-    '<b>Registration (1%):</b> ₹' + Math.round(regFee).toLocaleString('en-IN') +
-    (rebate > 0 ? '<br><b>Rebate:</b> -₹' + rebate.toLocaleString('en-IN') : '') +
-    '<br><hr style="margin:5px 0"><b>Total:</b> ₹' + Math.round(total).toLocaleString('en-IN') +
-    '<br><span style="color:#8b0000;font-size:10px">Indicative only. Verify on IGRSUP before payment.</span>';
-}
-
-/* CIRCLE RATE - AUTO */
-var URBAN_RATES = {
-  gomti_nagar:     { name: 'Gomti Nagar',       rate: 77000 },
-  hazratganj:      { name: 'Hazratganj / MG Marg', rate: 76500 },
-  mahanagar:       { name: 'Mahanagar',         rate: 53000 },
-  indira_nagar:    { name: 'Indira Nagar',      rate: 48000 },
-  aliganj:         { name: 'Aliganj / Sitapur Road', rate: 42000 },
-  vibhuti_khand:   { name: 'Vibhuti Khand',     rate: 42500 },
-  faizabad_road:   { name: 'Faizabad Road',     rate: 33000 },
-  sultanpur_road:  { name: 'Sultanpur Road / Shaheed Path', rate: 27500 },
-  general_urban:   { name: 'General Urban Residential', rate: 22000 }
-};
-var RURAL_RATES = {
-  parvar_highway:  { name: 'Parvar (Expressway side)', ratePerHa: 13000000 },
-  pahara:          { name: 'Pahara (Mohanlalganj)',    ratePerHa: 10000000 },
-  bhatola:         { name: 'Bhatola',                  ratePerHa: 10000000 },
-  jaitikeda:       { name: 'Jaitikeda',                ratePerHa: 10000000 },
-  neeva:           { name: 'Neeva',                    ratePerHa: 10000000 },
-  general_rural:   { name: 'General Rural',            ratePerHa: 9000000 }
-};
-function toggleCircleZone() {
-  var type = document.getElementById('circleZoneType').value;
-  document.getElementById('urbanZoneBox').style.display = (type === 'urban') ? 'block' : 'none';
-  document.getElementById('ruralZoneBox').style.display = (type === 'rural') ? 'block' : 'none';
-  if (type === 'manual') document.getElementById('circleRateInput').value = '';
-}
-function fillUrbanRate() {
-  var key = document.getElementById('urbanZoneSelect').value;
-  if (!key || !URBAN_RATES[key]) return;
-  var d = URBAN_RATES[key];
-  document.getElementById('circleRateInput').value = d.rate;
-  document.getElementById('areaNameInput').value = d.name + ', Lucknow';
-}
-function fillRuralRate() {
-  var key = document.getElementById('ruralZoneSelect').value;
-  if (!key || !RURAL_RATES[key]) return;
-  var d = RURAL_RATES[key];
-  var ratePerSqm = Math.round(d.ratePerHa / 10000);
-  document.getElementById('circleRateInput').value = ratePerSqm;
-  document.getElementById('areaNameInput').value = d.name + ', Lucknow (Rural)';
-}
-function calcCircleRateManual() {
-  var area = parseFloat(document.getElementById('areaSqm').value);
-  var rate = parseFloat(document.getElementById('circleRateInput').value);
-  var areaName = document.getElementById('areaNameInput').value.trim() || '-';
-  var state = document.getElementById('areaStateInput').value.trim() || 'Uttar Pradesh';
-  var type = document.getElementById('circleZoneType').value;
-  var el = document.getElementById('circleRateResult');
-  if (!area || area <= 0) { el.innerText = 'Enter valid area in sqm'; return; }
-  if (!rate || rate <= 0) { el.innerText = 'Rate auto-fill karein ya manual daalein'; return; }
-  var propertyValue = area * rate;
-  var typeLabel = type === 'urban' ? 'Urban / शहरी' : (type === 'rural' ? 'Rural / ग्रामीण' : 'Manual');
-  el.innerHTML =
-    '<b>Area Type:</b> ' + typeLabel + '<br>' +
-    '<b>Area Name:</b> ' + areaName + '<br>' +
-    '<b>State:</b> ' + state + '<br>' +
-    '<b>Area:</b> ' + area + ' sqm<br>' +
-    '<b>Circle Rate:</b> ₹' + rate.toLocaleString('en-IN') + '/sqm<br>' +
-    '<hr style="margin:5px 0">' +
-    '<b style="font-size:13px">Property Value: ₹' + Math.round(propertyValue).toLocaleString('en-IN') + '</b>' +
-    '<br><hr style="margin:5px 0">' +
-    '<span style="color:#8b0000;font-size:10px">⚠️ Reference only. Actual rate IGRSUP par verify karein.</span>';
-}
-function calcCircleRate() { calcCircleRateManual(); }
-
-/* CIRCLE RATE - SIMPLE */
-function calcCircleRateSimple() {
-  var rate = parseFloat(document.getElementById('lucknowArea').value);
-  var area = parseFloat(document.getElementById('simpleAreaSqm').value);
-  var el = document.getElementById('circleRateSimpleResult');
-  if (!area || area <= 0) { el.innerText = 'Area daalo sqm me (jaise 100)'; return; }
-  var value = rate * area, sM = value * 0.07, sF = value * 0.06, reg = value * 0.01;
-  el.innerHTML = '<b>Circle Rate:</b> ₹' + rate.toLocaleString('en-IN') + '/sqm<br><b>Area:</b> ' + area + ' sqm<br><b>Anumanit Mulya:</b> ₹' + Math.round(value).toLocaleString('en-IN') + '<br><hr style="margin:5px 0"><b>Purush kharidaar:</b> ₹' + Math.round(sM + reg).toLocaleString('en-IN') + '<br><b>Mahila kharidaar:</b> ₹' + Math.round(sF + reg).toLocaleString('en-IN') + '<br><span style="color:#8b0000">IGRSUP portal se confirm karein.</span>';
-}
+/* Legacy compat */
+function calcStampDuty() { stampCalculate(); }
+function calcCircleRateManual() { circleCalculate(); }
+function calcCircleRate() { circleCalculate(); }
+function toggleCircleZone() { circleZoneChange(); }
+function fillUrbanRate() { circleAreaChange(); }
+function fillRuralRate() { circleAreaChange(); }
 
 var TOOLS = [
   { id:'bail_regular', fmt:'bail_regular', title:'जमानत प्रार्थना - Regular Bail', desc:'480 BNSS / 437 CrPC', kw:'bail jamanat jamanti regular 437 480 crpc bnss' },
@@ -1099,7 +1330,6 @@ function showTrending() {
   }).join('');
   box.innerHTML = html;
 }
-
 function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
 function renderAutoTools(list) {
   var box = document.getElementById('autoToolsGrid');
@@ -1118,8 +1348,8 @@ function useTool(id) {
   else if (t.action === 'mangal') { document.getElementById('mangalInput').scrollIntoView({ behavior: 'smooth', block: 'center' }); document.getElementById('mangalInput').focus(); }
   else if (t.action === 'photo') { document.getElementById('photoInput').scrollIntoView({ behavior: 'smooth', block: 'center' }); }
   else if (t.action === 'courtfee') { document.getElementById('courtFeeAmount').scrollIntoView({ behavior: 'smooth', block: 'center' }); document.getElementById('courtFeeAmount').focus(); }
-  else if (t.action === 'stamp') { document.getElementById('propertyValue').scrollIntoView({ behavior: 'smooth', block: 'center' }); document.getElementById('propertyValue').focus(); }
-  else if (t.action === 'circle') { document.getElementById('circleZoneType').scrollIntoView({ behavior: 'smooth', block: 'center' }); document.getElementById('circleZoneType').focus(); }
+  else if (t.action === 'stamp') { document.getElementById('sec-stamp').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  else if (t.action === 'circle') { document.getElementById('sec-circle').scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   else if (t.action === 'link') { window.open(t.href, '_blank', 'noopener'); }
 }
 function searchAndAutoAdd(q) {
@@ -1137,7 +1367,6 @@ function searchAndAutoAdd(q) {
   renderAutoTools(scored.slice(0, 8));
 }
 
-/* DRAFT BUILDING - keep all cases as in new file */
 function todayStr() { var d = new Date(); return d.getDate() + '-' + (d.getMonth() + 1) + '-' + d.getFullYear(); }
 function buildDraft(type, d) {
   var hi = currentLang === 'hi', L = LANG[currentLang];
@@ -1258,15 +1487,15 @@ function applyProBadge() { var b = document.getElementById('proBadge'); if (isPr
 var PAGES = {
   about: {
     title: 'About Us - LegalTools Lucknow',
-    body: '<h2>About LegalTools Lucknow</h2><p>LegalTools Lucknow ek independent documentation assistance platform hai jo vakeelon, law students, aur aam nagrikon ko Lucknow aur Uttar Pradesh ke liye court-ready legal formats, converters aur calculators provide karta hai.</p><h3>Hamara Mission</h3><p>1 July 2024 se lagu naye criminal laws (BNS, BNSS, BSA) ke baad logon ko purane aur naye sections ke beech confusion hoti hai. Hum aasan, free aur verified tools ke through yeh gap fill karte hain.</p><h3>Kya Provide Karte Hain</h3><ul><li>IPC ↔ BNS, CrPC ↔ BNSS, IEA ↔ BSA Converter</li><li>22+ Legal Drafting Formats</li><li>Court Fee + Stamp Duty + Circle Rate Calculators</li><li>Mangal ↔ KrutiDev Hindi Font Converter</li><li>Photo to PDF (Court Size A4)</li><li>Khatauni, Bhu-Naksha, eCourts ke direct links</li><li>Zeenat AI Voice Legal Assistant (Lucknow Kanoon Sahayak 9.0)</li></ul><h3>Important</h3><p><strong>Hum ek legal firm ya vakeel nahi hain.</strong> Yeh tool sirf documentation assistance deta hai. Kanooni salah ke liye registered Advocate se milein.</p><p>Contact: <strong>icfai.sandeep@oksbi</strong></p>'
+    body: '<h2>About LegalTools Lucknow</h2><p>LegalTools Lucknow ek independent documentation assistance platform hai jo vakeelon, law students, aur aam nagrikon ko Lucknow aur Uttar Pradesh ke liye court-ready legal formats, converters aur calculators provide karta hai.</p><h3>Hamara Mission</h3><p>1 July 2024 se lagu naye criminal laws (BNS, BNSS, BSA) ke baad logon ko purane aur naye sections ke beech confusion hoti hai. Hum aasan, free aur verified tools ke through yeh gap fill karte hain.</p><h3>Kya Provide Karte Hain</h3><ul><li>IPC ↔ BNS, CrPC ↔ BNSS, IEA ↔ BSA Converter</li><li>22+ Legal Drafting Formats</li><li>Court Fee + Stamp Duty + Circle Rate Calculators (Auto + Manual)</li><li>Mangal ↔ KrutiDev Hindi Font Converter</li><li>Photo to PDF (Court Size A4)</li><li>Khatauni, Bhu-Naksha, eCourts ke direct links</li><li>Zeenat AI Voice Legal Assistant (Lucknow Kanoon Sahayak 9.0)</li></ul><h3>Important</h3><p><strong>Hum ek legal firm ya vakeel nahi hain.</strong> Yeh tool sirf documentation assistance deta hai. Kanooni salah ke liye registered Advocate se milein.</p><p>Contact: <strong>sahayakkanoon@gmail.com</strong></p>'
   },
   privacy: {
     title: 'Privacy Policy - LegalTools Lucknow',
-    body: '<h2>Privacy Policy</h2><p><strong>Last Updated:</strong> January 2026</p><p>LegalTools Lucknow aapki privacy ka pura samman karta hai.</p><h3>1. Kya Data Collect Karte Hain</h3><ul><li><strong>Local Storage:</strong> Aapke draft, history aapke browser me hi save hote hain.</li><li><strong>Form Data:</strong> Sirf aapke browser me process hota hai.</li><li><strong>Photos (PDF Tool):</strong> Aapke browser me hi PDF me convert hoti hai — upload nahi hoti.</li><li><strong>Uploaded Files:</strong> Aapki files browser me hi read hoti hain.</li><li><strong>Cookies & Ads:</strong> Google AdSense third-party cookies use karta hai.</li><li><strong>Kanoon Sahayak Embed:</strong> External site embed hai — unki privacy policy bhi applicable hai.</li></ul><h3>2. Data Kaise Use Karte Hain</h3><p>Hum aapka personal data bechte, kiraye par dete ya share nahi karte.</p><h3>3. Third-Party Services</h3><ul><li><strong>Google AdSense:</strong> Ads ke liye.</li><li><strong>Lucknow Kanoon Sahayak 9.0:</strong> Zeenat AI Voice Bot, PDF Scanner.</li><li><strong>QR Server API:</strong> UPI QR generate karne ke liye.</li><li><strong>Speech Recognition:</strong> Browser ke native API se.</li></ul><h3>4. Aapke Adhikaar</h3><p>Email: <strong>icfai.sandeep@oksbi</strong></p><h3>5. Children\'s Privacy</h3><p>Yeh site 13 saal se kam umar ke bachchon ke liye nahi hai.</p><h3>6. Policy Updates</h3><p>Privacy policy waqt-waqt par update ho sakti hai.</p>'
+    body: '<h2>Privacy Policy</h2><p><strong>Last Updated:</strong> January 2026</p><p>LegalTools Lucknow aapki privacy ka pura samman karta hai.</p><h3>1. Kya Data Collect Karte Hain</h3><ul><li><strong>Local Storage:</strong> Aapke draft, history aapke browser me hi save hote hain.</li><li><strong>Form Data:</strong> Sirf aapke browser me process hota hai.</li><li><strong>Photos (PDF Tool):</strong> Aapke browser me hi PDF me convert hoti hai — upload nahi hoti.</li><li><strong>Uploaded Files:</strong> Aapki files browser me hi read hoti hain.</li><li><strong>Cookies & Ads:</strong> Google AdSense third-party cookies use karta hai.</li><li><strong>Kanoon Sahayak Embed:</strong> External site embed hai — unki privacy policy bhi applicable hai.</li></ul><h3>2. Data Kaise Use Karte Hain</h3><p>Hum aapka personal data bechte, kiraye par dete ya share nahi karte.</p><h3>3. Third-Party Services</h3><ul><li><strong>Google AdSense:</strong> Ads ke liye.</li><li><strong>Lucknow Kanoon Sahayak 9.0:</strong> Zeenat AI Voice Bot, PDF Scanner.</li><li><strong>QR Server API:</strong> UPI QR generate karne ke liye.</li><li><strong>Speech Recognition:</strong> Browser ke native API se.</li></ul><h3>4. Aapke Adhikaar</h3><p>Email: <strong>sahayakkanoon@gmail.com</strong></p><h3>5. Children Privacy</h3><p>Yeh site 13 saal se kam umar ke bachchon ke liye nahi hai.</p><h3>6. Policy Updates</h3><p>Privacy policy waqt-waqt par update ho sakti hai.</p>'
   },
   terms: {
     title: 'Terms & Conditions - LegalTools Lucknow',
-    body: '<h2>Terms & Conditions</h2><p><strong>Last Updated:</strong> January 2026</p><p>Is website ka istemaal karke aap in Terms & Conditions se sehmat hote hain.</p><h3>1. Service Nature</h3><p>LegalTools Lucknow ek documentation assistance tool hai. Hum koi legal advice ya vakeel-client relationship provide nahi karte.</p><h3>2. No Legal Advice</h3><p>Yahan diye gaye sabhi formats "as is" basis par hain. Kisi bhi document ko court me file karne se pehle <strong>registered Advocate se verify karayein</strong>.</p><h3>3. User Responsibility</h3><ul><li>Aap sahi jaankari dene ke liye zimmedar hain.</li><li>Illegal kaam ke liye tool ka istemaal na karein.</li><li>Bainama, Will, Affidavit stamp duty/notary/registration ke bina valid nahi hote.</li></ul><h3>4. External Integration</h3><p>Lucknow Kanoon Sahayak 9.0 external site hai — uske content ke liye hum zimmedar nahi.</p><h3>5. Service Availability</h3><p>Hum bina notice ke feature change kar sakte hain.</p><h3>6. Pro Unlock (Rs 49)</h3><p>Pro Unlock ek digital product hai — lifetime access.</p><h3>7. Payment & Refund</h3><p>Sabhi payments voluntary aur final hain — <strong>koi refund nahi</strong>.</p><h3>8. Limitation of Liability</h3><p>Kisi bhi loss ke liye LegalTools Lucknow zimmedar nahi hoga.</p><h3>9. Governing Law</h3><p>Indian law, Lucknow jurisdiction.</p><h3>10. Contact</h3><p><strong>icfai.sandeep@oksbi</strong></p>'
+    body: '<h2>Terms & Conditions</h2><p><strong>Last Updated:</strong> January 2026</p><p>Is website ka istemaal karke aap in Terms & Conditions se sehmat hote hain.</p><h3>1. Service Nature</h3><p>LegalTools Lucknow ek documentation assistance tool hai. Hum koi legal advice ya vakeel-client relationship provide nahi karte.</p><h3>2. No Legal Advice</h3><p>Yahan diye gaye sabhi formats "as is" basis par hain. Kisi bhi document ko court me file karne se pehle <strong>registered Advocate se verify karayein</strong>.</p><h3>3. User Responsibility</h3><ul><li>Aap sahi jaankari dene ke liye zimmedar hain.</li><li>Illegal kaam ke liye tool ka istemaal na karein.</li><li>Bainama, Will, Affidavit stamp duty/notary/registration ke bina valid nahi hote.</li></ul><h3>4. External Integration</h3><p>Lucknow Kanoon Sahayak 9.0 external site hai — uske content ke liye hum zimmedar nahi.</p><h3>5. Service Availability</h3><p>Hum bina notice ke feature change kar sakte hain.</p><h3>6. Pro Unlock (Rs 49)</h3><p>Pro Unlock ek digital product hai — lifetime access.</p><h3>7. Payment & Refund</h3><p>Sabhi payments voluntary aur final hain — <strong>koi refund nahi</strong>.</p><h3>8. Limitation of Liability</h3><p>Kisi bhi loss ke liye LegalTools Lucknow zimmedar nahi hoga.</p><h3>9. Governing Law</h3><p>Indian law, Lucknow jurisdiction.</p><h3>10. Contact</h3><p><strong>sahayakkanoon@gmail.com</strong></p>'
   },
   disclaimer: {
     title: 'Disclaimer - LegalTools Lucknow',
@@ -1274,11 +1503,11 @@ var PAGES = {
   },
   contact: {
     title: 'Contact Us - LegalTools Lucknow',
-    body: '<h2>Contact Us</h2><p>Koi bhi sawaal, sujhav, ya technical issue ho to humein zaroor batayein.</p><h3>📧 Email</h3><p><strong>icfai.sandeep@oksbi</strong><br>Response time: 24-48 hours</p><h3>💬 UPI (Pro / Support)</h3><p><strong>icfai.sandeep@oksbi</strong><br>Rs 49 - Pro Unlock</p><h3>📍 Location</h3><p>Lucknow, Uttar Pradesh, India</p><h3>🕐 Working Hours</h3><p>Monday - Saturday: 10:00 AM - 6:00 PM<br>Sunday: Closed</p><h3>⚠️ Kya Expect Na Karein</h3><ul><li>Hum legal advice nahi dete.</li><li>Hum vakeel ke roop me represent nahi karte.</li><li>Payment refund nahi hota.</li></ul><h3>📝 Feedback</h3><p>Agar koi tool kaam nahi kar raha — email karein.</p><div style="margin-top:20px;padding:12px;background:#f4f1ea;border-radius:6px"><strong>LegalTools Lucknow</strong><br>Documentation Assistance Platform<br>Lucknow, Uttar Pradesh, India</div>'
+    body: '<h2>Contact Us</h2><p>Koi bhi sawaal, sujhav, ya technical issue ho to humein zaroor batayein.</p><h3>📧 Email</h3><p><strong>sahayakkanoon@gmail.com</strong><br>Response time: 24-48 hours</p><h3>💬 UPI (Pro / Support)</h3><p><strong>icfai.sandeep@oksbi</strong><br>Rs 49 - Pro Unlock</p><h3>📍 Location</h3><p>Lucknow, Uttar Pradesh, India</p><h3>🕐 Working Hours</h3><p>Monday - Saturday: 10:00 AM - 6:00 PM<br>Sunday: Closed</p><h3>⚠️ Kya Expect Na Karein</h3><ul><li>Hum legal advice nahi dete.</li><li>Hum vakeel ke roop me represent nahi karte.</li><li>Payment refund nahi hota.</li></ul><h3>📝 Feedback</h3><p>Agar koi tool kaam nahi kar raha — email karein.</p><div style="margin-top:20px;padding:12px;background:#f4f1ea;border-radius:6px"><strong>LegalTools Lucknow</strong><br>Documentation Assistance Platform<br>Lucknow, Uttar Pradesh, India</div>'
   },
   refund: {
     title: 'Refund Policy - LegalTools Lucknow',
-    body: '<h2>Refund Policy</h2><p><strong>Last Updated:</strong> January 2026</p><div style="padding:14px;background:#fff2f2;border-left:5px solid #8b0000;margin:16px 0;border-radius:4px"><strong style="color:#8b0000;font-size:15px">⚠️ SABHI PAYMENTS FINAL HAIN — KOI REFUND NAHI</strong></div><p>LegalTools Lucknow par kiye gaye sabhi payments <strong>100% non-refundable</strong> hain.</p><h3>1. Kyun No Refund</h3><ul><li><strong>Digital Product:</strong> Instant digital service — turant unlock.</li><li><strong>Voluntary Contribution:</strong> Swvechha se diya gaya paisa.</li><li><strong>Instant Delivery:</strong> Feature turant available.</li><li><strong>Lifetime Access:</strong> Na ki subscription.</li></ul><h3>2. Kya Refund Milega (Kuch Nahi)</h3><ul><li>❌ Mann badal gaya</li><li>❌ Galti se payment</li><li>❌ Tool pasand nahi aaya</li><li>❌ Zaroorat khatam</li><li>❌ Kisi aur ne payment ki</li><li>❌ Technical issue</li><li>❌ Internet problem</li><li>❌ Double payment</li></ul><h3>3. Double Payment</h3><p>Refund nahi hoga. Email karein <strong>icfai.sandeep@oksbi</strong> — hum extra support ya extended features denge.</p><h3>4. Technical Issue</h3><p>Email karein — hum <strong>issue fix karenge</strong>, refund nahi.</p><h3>5. Payment Dispute</h3><ul><li>Pro access band kar diya jayega.</li><li>Information legal authorities ke saath share.</li><li>Future payments block.</li></ul><h3>6. Chargeback</h3><p>Chargeback file karne par bhi refund nahi milega.</p><h3>7. Free Version Hamesha Available</h3><p>Bina koi payment ke aap 18+ formats, BNS converter, Court Fee calculator sab use kar sakte hain.</p><h3>8. Sehmati (Agreement)</h3><p>Payment karke aap iss refund policy se sehmat hote hain.</p><div style="margin-top:20px;padding:14px;background:#fffef8;border:1px dashed #8b0000;border-radius:6px"><strong>Ek line me:</strong> Payment final hai. Free tools hamesha available hain. Refund nahi hoga.</div>'
+    body: '<h2>Refund Policy</h2><p><strong>Last Updated:</strong> January 2026</p><div style="padding:14px;background:#fff2f2;border-left:5px solid #8b0000;margin:16px 0;border-radius:4px"><strong style="color:#8b0000;font-size:15px">⚠️ SABHI PAYMENTS FINAL HAIN — KOI REFUND NAHI</strong></div><p>LegalTools Lucknow par kiye gaye sabhi payments <strong>100% non-refundable</strong> hain.</p><h3>1. Kyun No Refund</h3><ul><li><strong>Digital Product:</strong> Instant digital service — turant unlock.</li><li><strong>Voluntary Contribution:</strong> Swvechha se diya gaya paisa.</li><li><strong>Instant Delivery:</strong> Feature turant available.</li><li><strong>Lifetime Access:</strong> Na ki subscription.</li></ul><h3>2. Kya Refund Milega (Kuch Nahi)</h3><ul><li>❌ Mann badal gaya</li><li>❌ Galti se payment</li><li>❌ Tool pasand nahi aaya</li><li>❌ Zaroorat khatam</li><li>❌ Kisi aur ne payment ki</li><li>❌ Technical issue</li><li>❌ Internet problem</li><li>❌ Double payment</li></ul><h3>3. Double Payment</h3><p>Refund nahi hoga. Email karein <strong>sahayakkanoon@gmail.com</strong> — hum extra support ya extended features denge.</p><h3>4. Technical Issue</h3><p>Email karein — hum <strong>issue fix karenge</strong>, refund nahi.</p><h3>5. Payment Dispute</h3><ul><li>Pro access band kar diya jayega.</li><li>Information legal authorities ke saath share.</li><li>Future payments block.</li></ul><h3>6. Chargeback</h3><p>Chargeback file karne par bhi refund nahi milega.</p><h3>7. Free Version Hamesha Available</h3><p>Bina koi payment ke aap 18+ formats, BNS converter, Court Fee calculator sab use kar sakte hain.</p><h3>8. Sehmati (Agreement)</h3><p>Payment karke aap iss refund policy se sehmat hote hain.</p><div style="margin-top:20px;padding:14px;background:#fffef8;border:1px dashed #8b0000;border-radius:6px"><strong>Ek line me:</strong> Payment final hai. Free tools hamesha available hain. Refund nahi hoga.</div>'
   }
 };
 
@@ -1332,9 +1561,9 @@ function botReply(q) {
     }
   }
   if (/bail|jamanat|jamanti/.test(s)) return 'Jamanat ke liye:\nRegular Bail = Dhara 480 BNSS (437 CrPC)\nAnticipatory Bail = Dhara 482 BNSS (438 CrPC)';
-  if (/stamp|registry|registration/.test(s)) return 'Stamp Duty: Male 7%, Female 6%, Joint 6.5%. Registration 1%.';
+  if (/stamp|registry|registration/.test(s)) return 'Stamp Duty Calculator me Auto ya Manual mode select karein. Male 7%, Female 6%, Joint 6.5%. Registration 1%.';
   if (/court fee|adalat shulk/.test(s)) return 'Court Fee Calculator me rashi daalein.';
-  if (/circle|registry/.test(s)) return 'Circle Rate Calculator me area (sqm) daalein. Urban/Rural auto-fill bhi available hai.';
+  if (/circle|registry/.test(s)) return 'Circle Rate Calculator me area (sqm) daalein. Auto mode me rate dropdown से auto-fill hoga.';
   if (/mangal|kruti|font/.test(s)) return 'Mangal to KrutiDev tool use karein - Type ya File Upload mode.';
   if (/photo|pdf|scan/.test(s)) return 'Photo to PDF tool me images select karein — A4 court size PDF.';
   if (/khatauni|bhulekh|nakal/.test(s)) return 'Khatauni ke liye upbhulekh.gov.in.';
@@ -1344,7 +1573,7 @@ function botReply(q) {
   if (/refund|wapas|paisa wapas/.test(s)) return 'Payment final hai — koi refund nahi. Free tools hamesha available.';
   if (/pro|price|49|paisa|unlock|coffee|chai/.test(s)) return 'Pro Rs 49 — UPI: icfai.sandeep@oksbi';
   if (/bsa|electronic|65b|63/.test(s)) return 'BSA Section 63 = IEA 65B — Electronic Evidence.';
-  if (/zeenat|kanoon sahayak|ai assistant/.test(s)) return 'Zeenat AI ke liye "Kanoon Sahayak" tab par jaayein — full AI voice assistant wahan hai.';
+  if (/zeenat|kanoon sahayak|ai assistant/.test(s)) return 'Zeenat AI ke liye "Kanoon Sahayak" tab par jaayein.';
   if (/hello|hi|namaste|नमस्ते|hey/.test(s)) return 'नमस्ते! 🙏 LegalTools Lucknow me aapka swagat hai.';
   if (/advice|salah|vakil|advocate/.test(s)) return 'Yeh tool sirf documentation assistance deta hai.';
   return 'Try karein:\n• "IPC 302"\n• "bail"\n• "court fee"\n• "BSA 63"\n• "refund"';
@@ -1447,7 +1676,7 @@ function openChat() {
   var w = document.getElementById('chatWindow');
   w.style.display = 'flex';
   if (!document.getElementById('chatMsgs').children.length) {
-    addMsg('नमस्ते! 🙏 मैं LegalTools सहायक हूँ।\n\n🎤 Mic dabakar bol sakte hain\n⌨️ Ya type karein (auto-send on hai)\n\nपूछें: "IPC 302 = BNS?" या "BSA 63"', 'bot');
+    addMsg('नमस्ते! 🙏 मैं LegalTools सहायक हूँ।\n\n🎤 Mic dabakar bol sakte hain\n⌨️ Ya type karein\n\nपूछें: "IPC 302 = BNS?" या "BSA 63"', 'bot');
   }
   document.getElementById('chatInput').focus();
 }
@@ -1456,7 +1685,6 @@ function closeChat() {
   document.getElementById('chatWindow').style.display = 'none';
 }
 
-/* PWA */
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
     navigator.serviceWorker.register('/sw.js')
@@ -1493,7 +1721,6 @@ window.addEventListener('appinstalled', function () {
   localStorage.setItem('pwa_dismissed', '1');
 });
 
-/* URL shortcuts */
 (function handleToolShortcut() {
   var params = new URLSearchParams(window.location.search);
   var tool = params.get('tool');
@@ -1511,8 +1738,11 @@ window.addEventListener('appinstalled', function () {
       var el = document.getElementById('courtFeeAmount');
       if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.focus(); }
     } else if (tool === 'circle') {
-      var el = document.getElementById('circleZoneType');
-      if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); el.focus(); }
+      var el = document.getElementById('sec-circle');
+      if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    } else if (tool === 'stamp') {
+      var el = document.getElementById('sec-stamp');
+      if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     } else if (tool === 'kanoon') {
       var el = document.getElementById('sec-kanoon');
       if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
@@ -1527,6 +1757,8 @@ window.addEventListener('appinstalled', function () {
   showTrending();
   renderHistory();
   showQuote();
+  stampZoneChange();
+  circleZoneChange();
   var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
   var tag = document.getElementById('voiceSupportTag');
   if (tag) tag.innerText = SR ? '🎤 Voice ready' : '';
@@ -1535,6 +1767,7 @@ window.addEventListener('appinstalled', function () {
   if (vl) vl.addEventListener('change', function () {
     if (chatListening && chatRecog) { chatRecog.lang = vl.value; try { chatRecog.stop(); } catch (e) {} }
   });
+  setInterval(rotateAdSlots, 8000);
 })();
 </script>
 </body>
