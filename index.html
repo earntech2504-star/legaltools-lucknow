@@ -37,8 +37,8 @@
     "CrPC to BNSS Converter (156(3)=175(3))",
     "BSA Section 63 Electronic Evidence",
     "Bail Application Format (480/482 BNSS)",
-    "Stamp Duty Calculator UP (Auto + Manual)",
-    "Circle Rate Calculator Lucknow",
+    "Stamp Duty Calculator UP (Manual + Unit Converter + Reference)",
+    "Circle Rate Calculator UP (New System 2026 + Reference)",
     "Court Fee Calculator UP",
     "Mangal to KrutiDev Converter",
     "Photo to PDF Court Size",
@@ -122,10 +122,6 @@ footer a:hover{text-decoration:underline}
 .premiumCalcHeader .calcTitle .icon{font-size:20px}
 .premiumCalcHeader .calcSubtitle{font-size:10px;color:#d4c9b0;margin-top:4px;letter-spacing:.5px}
 .premiumCalcBody{padding:18px}
-.premiumCalcBody .modeToggle{display:flex;gap:0;margin-bottom:14px;border:1.5px solid #1a1a1a;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06)}
-.premiumCalcBody .modeBtn{flex:1;padding:10px 12px;background:#fff;color:#1a1a1a;border:none;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.3px}
-.premiumCalcBody .modeBtn:hover{background:#f4f1ea}
-.premiumCalcBody .modeBtn.active{background:linear-gradient(135deg,#8b0000 0%,#6b0000 100%);color:#fff;box-shadow:inset 0 2px 4px rgba(0,0,0,.2)}
 .premiumCalcBody label{display:block;font-size:11px;color:#555;font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
 .premiumCalcBody input,.premiumCalcBody select{border:1.5px solid #d4c9b0;background:#fff;padding:10px 12px;font-size:13px;border-radius:6px;transition:all .2s;font-family:'Times New Roman',serif}
 .premiumCalcBody input:focus,.premiumCalcBody select:focus{border-color:#8b0000;outline:none;box-shadow:0 0 0 3px rgba(139,0,0,.08)}
@@ -138,6 +134,27 @@ footer a:hover{text-decoration:underline}
 .premiumCalcBody .updateBanner .bIcon{font-size:14px;flex-shrink:0}
 .premiumCalcBody .igrsupBtn{display:block;text-align:center;background:#fff;border:1.5px solid #8b0000;color:#8b0000;padding:9px;border-radius:6px;font-size:11px;font-weight:700;text-decoration:none;margin-top:10px;transition:all .2s;letter-spacing:.3px}
 .premiumCalcBody .igrsupBtn:hover{background:#8b0000;color:#fff}
+.premiumCalcBody .infoBanner{background:#fff8e6;border:1px solid #f4d7b0;border-radius:6px;padding:10px 12px;font-size:11px;color:#8b6914;margin-bottom:12px;line-height:1.6}
+.premiumCalcBody details{margin:6px 0 10px 0;font-size:11px}
+.premiumCalcBody details summary{cursor:pointer;color:#8b0000;font-weight:700;padding:6px 0}
+.premiumCalcBody details > div{padding:8px;background:#f4f1ea;border-radius:6px;margin-top:6px}
+.premiumCalcBody .unitGrid{display:grid;grid-template-columns:2fr 1fr;gap:6px;margin-bottom:6px}
+.premiumCalcBody .checkRow{display:flex;align-items:center;gap:6px;margin-bottom:6px;font-size:11px}
+.premiumCalcBody .checkRow input{width:auto;margin:0}
+
+.refBox{background:#fff8e6;border:1px solid #f4d7b0;border-radius:8px;padding:0;margin-top:14px}
+.refBox summary{cursor:pointer;padding:10px 12px;font-size:11px;font-weight:700;color:#8b6914;list-style:none;display:block}
+.refBox summary::-webkit-details-marker{display:none}
+.refBox summary::before{content:"▶ ";font-size:9px;margin-right:4px;display:inline-block;transition:transform .2s}
+.refBox[open] summary::before{transform:rotate(90deg)}
+.refBoxBody{padding:12px;border-top:1px solid #f4d7b0}
+.refBoxBody label{display:block;font-size:11px;color:#555;font-weight:700;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px;margin-top:8px}
+.refBoxBody input,.refBoxBody select{border:1.5px solid #f4d7b0;background:#fff;padding:10px 12px;font-size:13px;border-radius:6px;width:100%;font-family:'Times New Roman',serif;margin-bottom:4px}
+.refBoxBody input:focus,.refBoxBody select:focus{border-color:#8b6914;outline:none;box-shadow:0 0 0 3px rgba(139,105,20,.08)}
+.refDisclaimer{background:#fff2f2;border-left:4px solid #8b0000;padding:8px 10px;font-size:10px;color:#8b0000;border-radius:4px;margin-bottom:10px;line-height:1.5}
+.refNote{font-size:10px;color:#8b0000;margin-top:8px;text-align:center;font-weight:700}
+.refResult{margin-top:12px;padding:14px;background:#fff8e6;border-left:4px solid #8b6914;border-radius:8px;font-size:12px;line-height:1.8;min-height:50px;color:#1a1a1a}
+.refResult b{color:#8b6914}
 </style>
 </head>
 <body>
@@ -361,67 +378,76 @@ footer a:hover{text-decoration:underline}
 </div>
 </div>
 
+<!-- ============ STAMP DUTY CALCULATOR - HYBRID MODE ============ -->
 <div class="premiumCalc scrollTarget" id="sec-stamp">
   <div class="premiumCalcHeader">
     <div class="calcTitle"><span class="icon">💰</span> Stamp Duty + Registration Calculator (UP)</div>
-    <div class="calcSubtitle">Auto + Manual · Male / Female / Joint · IGRSUP Verified Rates</div>
+    <div class="calcSubtitle">Manual Input · Unit Converter · Position Adjustment · Male 7% / Female 6% / Joint 6.5%</div>
   </div>
   <div class="premiumCalcBody">
-    <div class="modeToggle">
-      <button class="modeBtn active" id="stampModeAuto" onclick="setStampMode('auto')">🏙️ Auto (Area se rate)</button>
-      <button class="modeBtn" id="stampModeManual" onclick="setStampMode('manual')">✍️ Manual (Khud daalein)</button>
+
+    <div class="infoBanner">
+      ⚠️ <b>UP Circle Rate 15 August 2026 से बदल गया है।</b> अब rate plot की actual location और position पर depend करता है, केवल area name पर नहीं। Exact rate के लिए IGRSUP Official पर जाएँ।
     </div>
 
-    <div id="stampAutoBox">
-      <label>Area Type</label>
-      <select id="stampZoneType" onchange="stampZoneChange()">
-        <option value="urban">🏙️ Urban / शहरी - Lucknow City</option>
-        <option value="rural">🌾 Rural / ग्रामीण - Lucknow Villages</option>
-      </select>
+    <a href="https://igrsup.gov.in" target="_blank" rel="noopener" class="igrsupBtn" style="margin-bottom:12px">🔗 IGRSUP Official - अपना Exact Rate देखें</a>
 
-      <label>Area / Locality (Auto Rate)</label>
-      <select id="stampAreaSelect" onchange="stampAreaChange()">
-        <option value="">-- Select Area --</option>
-        <optgroup label="🏙️ Urban Areas">
-          <option value="77000">Gomti Nagar - ₹77,000/sqm</option>
-          <option value="76000">MG Marg / Hazratganj - ₹76,000/sqm</option>
-          <option value="65000">Mahanagar (Upper) - ₹65,000/sqm</option>
-          <option value="53000">Mahanagar (Avg) - ₹53,000/sqm</option>
-          <option value="62000">Indira Nagar (Upper) - ₹62,000/sqm</option>
-          <option value="48000">Indira Nagar (Avg) - ₹48,000/sqm</option>
-          <option value="42500">Vibhuti Khand - ₹42,500/sqm</option>
-          <option value="42000">Aliganj / Sitapur Road - ₹42,000/sqm</option>
-          <option value="39000">Sitapur Road (Lower) - ₹39,000/sqm</option>
-          <option value="36000">Faizabad Road - ₹36,000/sqm</option>
-          <option value="27500">Sultanpur Road / Shaheed Path - ₹27,500/sqm</option>
-          <option value="25000">Alambagh - ₹25,000/sqm</option>
-          <option value="15000">Malihabad - ₹15,000/sqm</option>
-          <option value="22000">General Urban Residential - ₹22,000/sqm</option>
-        </optgroup>
-        <optgroup label="🌾 Rural Villages">
-          <option value="13000">Parvar (Expressway side) - ₹1.30 Cr/ha</option>
-          <option value="10000">Pahara (Mohanlalganj) - ₹1 Cr/ha</option>
-          <option value="9800">Gaura (Mohanlalganj) - ₹98 Lakh/ha</option>
-          <option value="9700">Barkatabad Jahangirabad - ₹97 Lakh/ha</option>
-          <option value="9500">Papanamau (Sadar) - ₹95 Lakh/ha</option>
-          <option value="9100">Danda Sikandarpur - ₹91 Lakh/ha</option>
-          <option value="9000">General Rural - ₹90 Lakh/ha</option>
-        </optgroup>
-      </select>
-      <div class="rateHint" id="stampRateHint">ℹ️ Area चुनें — reference rate auto-fill होगा</div>
+    <label>Property Value (₹) - IGRSUP से देखकर डालें</label>
+    <input id="stampManualValue" type="number" placeholder="जैसे 1000000" oninput="stampCalculate()">
 
-      <label>Area (sqm / वर्ग मीटर)</label>
-      <input id="stampAreaSqm" type="number" placeholder="जैसे 100" oninput="stampAutoCalc()">
+    <details>
+      <summary>🧮 या Unit Converter से calculate करें (sqm / hectare / bigha / acre / gaj / sqft)</summary>
+      <div>
+        <label>Circle Rate + Unit</label>
+        <div class="unitGrid">
+          <input id="stampUnitRate" type="number" placeholder="Rate (जैसे 50000)" oninput="stampUnitCalc()">
+          <select id="stampRateUnit" onchange="stampUnitCalc()">
+            <option value="sqm">₹ per sqm</option>
+            <option value="hectare">₹ per hectare</option>
+            <option value="bigha">₹ per bigha</option>
+            <option value="acre">₹ per acre</option>
+            <option value="gaj">₹ per gaj</option>
+            <option value="sqft">₹ per sqft</option>
+          </select>
+        </div>
+        <label>Plot Area + Unit</label>
+        <div class="unitGrid">
+          <input id="stampUnitArea" type="number" placeholder="Area (जैसे 100)" oninput="stampUnitCalc()">
+          <select id="stampAreaUnit" onchange="stampUnitCalc()">
+            <option value="sqm">sqm</option>
+            <option value="hectare">hectare</option>
+            <option value="bigha">bigha</option>
+            <option value="acre">acre</option>
+            <option value="gaj">gaj</option>
+            <option value="sqft">sqft</option>
+          </select>
+        </div>
+        <div id="stampUnitResult" style="margin-top:8px;font-size:11px;color:#555">Rate और Area डालें — auto convert होगा</div>
+      </div>
+    </details>
 
-      <label>Property Value (₹) - Auto Calculated</label>
-      <input id="stampAutoValue" type="number" placeholder="Auto fill हो जाएगा" readonly style="background:#f4f1ea;font-weight:700;color:#8b0000">
-    </div>
-
-    <div id="stampManualBox" style="display:none">
-      <label>Property Value (₹) - खुद डालें</label>
-      <input id="stampManualValue" type="number" placeholder="जैसे 1000000" oninput="stampManualCalc()">
-      <div class="rateHint">ℹ️ IGRSUP से exact value देखकर डालें</div>
-    </div>
+    <details>
+      <summary>📍 Position Adjustment (Highway / Corner / Park / Main Road)</summary>
+      <div>
+        <div style="font-size:10px;color:#8b6914;margin-bottom:6px">UP नए नियम के अनुसार plot की position पर अतिरिक्त % लगता है। ये % indicative हैं — exact calculation IGRSUP पर करें।</div>
+        <label class="checkRow">
+          <input type="checkbox" id="posHighway" onchange="stampCalculate()">
+          Highway / Expressway के पास (अनुमानित +15%)
+        </label>
+        <label class="checkRow">
+          <input type="checkbox" id="posCorner" onchange="stampCalculate()">
+          Corner Plot (2+ roads) — Highest rate apply होगा
+        </label>
+        <label class="checkRow">
+          <input type="checkbox" id="posPark" onchange="stampCalculate()">
+          Park / Green Belt Facing (अनुमानित +5%)
+        </label>
+        <label class="checkRow">
+          <input type="checkbox" id="posMainRoad" onchange="stampCalculate()">
+          Main Road Facing (अनुमानित +8%)
+        </label>
+      </div>
+    </details>
 
     <label>Buyer Type / खरीदार</label>
     <select id="stampBuyer" onchange="stampCalculate()">
@@ -433,90 +459,226 @@ footer a:hover{text-decoration:underline}
     <button class="calcBtn" onclick="stampCalculate()">📊 Calculate Stamp Duty + Registration</button>
 
     <div id="stampPremiumResult" class="calcResult">
-      Property value डालें और Calculate दबाएँ — Stamp Duty, Registration Fee, Rebate और Total सब दिखेगा।
+      Property value डालें — Stamp Duty, Registration Fee, Rebate और Total दिखेगा।
     </div>
+
+    <details class="refBox">
+      <summary>📌 Reference Area-wise Calculator (पुराना system) — सिर्फ reference के लिए</summary>
+      <div class="refBoxBody">
+        <div class="refDisclaimer">
+          ⚠️ <b>Disclaimer:</b> नीचे दिए गए rates 15 August 2026 से पहले के हैं। नए system में ये officially valid नहीं हैं। यह section सिर्फ <b>reference</b> के लिए है — actual calculation के लिए ऊपर Manual mode या IGRSUP portal use करें।
+        </div>
+
+        <label>Area Type</label>
+        <select id="stampRefZone" onchange="stampRefZoneChange()">
+          <option value="urban">🏙️ Urban / शहरी</option>
+          <option value="rural">🌾 Rural / ग्रामीण</option>
+        </select>
+
+        <label>Area / Locality</label>
+        <select id="stampRefArea" onchange="stampRefCalc()">
+          <option value="">-- Reference Area चुनें --</option>
+          <optgroup label="🏙️ Urban Areas" id="stampRefUrbanGroup">
+            <option value="77000">Gomti Nagar — ₹77,000/sqm</option>
+            <option value="76500">Hazratganj / MG Marg — ₹76,500/sqm</option>
+            <option value="65000">Mahanagar (Upper) — ₹65,000/sqm</option>
+            <option value="53000">Mahanagar (Avg) — ₹53,000/sqm</option>
+            <option value="62000">Indira Nagar (Upper) — ₹62,000/sqm</option>
+            <option value="48000">Indira Nagar (Avg) — ₹48,000/sqm</option>
+            <option value="42500">Vibhuti Khand — ₹42,500/sqm</option>
+            <option value="42000">Aliganj / Sitapur Road — ₹42,000/sqm</option>
+            <option value="39000">Sitapur Road (Lower) — ₹39,000/sqm</option>
+            <option value="36000">Faizabad Road — ₹36,000/sqm</option>
+            <option value="33000">Faizabad Road (Lower) — ₹33,000/sqm</option>
+            <option value="27500">Sultanpur Road / Shaheed Path — ₹27,500/sqm</option>
+            <option value="25000">Alambagh — ₹25,000/sqm</option>
+            <option value="22000">General Urban Residential — ₹22,000/sqm</option>
+            <option value="15000">Malihabad (Urban) — ₹15,000/sqm</option>
+          </optgroup>
+          <optgroup label="🌾 Rural Villages" id="stampRefRuralGroup">
+            <option value="13000">Parvar (Expressway side) — ₹1.30 Cr/ha</option>
+            <option value="10000">Pahara (Mohanlalganj) — ₹1 Cr/ha</option>
+            <option value="9800">Gaura (Mohanlalganj) — ₹98 Lakh/ha</option>
+            <option value="9700">Barkatabad Jahangirabad — ₹97 Lakh/ha</option>
+            <option value="9500">Papanamau (Sadar) — ₹95 Lakh/ha</option>
+            <option value="9100">Danda Sikandarpur — ₹91 Lakh/ha</option>
+            <option value="9000">General Rural — ₹90 Lakh/ha</option>
+          </optgroup>
+        </select>
+
+        <label>Area (sqm)</label>
+        <input id="stampRefAreaSqm" type="number" placeholder="जैसे 100" oninput="stampRefCalc()">
+
+        <label>Property Value (₹) — Reference से auto</label>
+        <input id="stampRefValue" type="number" placeholder="Auto fill होगा" readonly style="background:#f4f1ea;font-weight:700;color:#8b0000">
+
+        <div id="stampRefResult" class="refResult">
+          Reference area चुनें — पुराने system के हिसाब से calculation दिखेगा।
+        </div>
+
+        <div class="refNote">
+          ⚠️ यह reference-only calculation है — आधिकारिक नहीं
+        </div>
+      </div>
+    </details>
 
     <div class="updateBanner">
-      <span class="bIcon">📅</span>
-      <span><b>Rates 2026 के लिए:</b> UP सरकार circle rate हर साल अगस्त में संशोधित करती है। Latest rate verify करने के लिए IGRSUP देखें।</span>
+      <span class="bIcon">⚠️</span>
+      <span><b>Disclaimer:</b> यह calculation assistance tool है। Actual stamp duty IGRSUP portal पर verify करें। UP सरकार ने 15 August 2026 से नया system लागू किया है।</span>
     </div>
-
-    <a href="https://igrsup.gov.in" target="_blank" rel="noopener" class="igrsupBtn">🔗 IGRSUP Official - Exact Rate Verify करें</a>
   </div>
 </div>
 
+<!-- ============ CIRCLE RATE CALCULATOR - HYBRID MODE ============ -->
 <div class="premiumCalc scrollTarget" id="sec-circle">
   <div class="premiumCalcHeader">
-    <div class="calcTitle"><span class="icon">📍</span> Circle Rate Calculator - Lucknow</div>
-    <div class="calcSubtitle">Urban / Rural / Manual · Auto rate fill · IGRSUP verified</div>
+    <div class="calcTitle"><span class="icon">📍</span> Circle Rate Calculator - UP (New System 2026)</div>
+    <div class="calcSubtitle">Manual + Unit Converter · 3 Zones × 25 Sub-categories · Position Adjustment</div>
   </div>
   <div class="premiumCalcBody">
-    <div class="modeToggle">
-      <button class="modeBtn active" id="circleModeAuto" onclick="setCircleMode('auto')">🏙️ Auto (Area se)</button>
-      <button class="modeBtn" id="circleModeManual" onclick="setCircleMode('manual')">✍️ Manual</button>
+
+    <div class="infoBanner">
+      ⚠️ <b>15 August 2026 से नया system:</b> Property की value plot की actual location पर depend करती है — केवल area name पर नहीं। 3 categories (Urban / Semi-Urban / Rural) × 25 sub-categories (Residential / Commercial / Industrial / Agricultural आदि) + position adjustments।
     </div>
 
-    <div id="circleAutoBox">
-      <label>Area Type</label>
-      <select id="circleZoneType" onchange="circleZoneChange()">
-        <option value="urban">🏙️ Urban / शहरी - Lucknow City</option>
-        <option value="rural">🌾 Rural / ग्रामीण - Lucknow Villages</option>
+    <a href="https://igrsup.gov.in" target="_blank" rel="noopener" class="igrsupBtn" style="margin-bottom:12px">🔗 IGRSUP Official - अपना Exact Rate देखें</a>
+
+    <label>Zone / Category</label>
+    <select id="circleZoneNew" style="margin-bottom:6px">
+      <option value="urban">🏙️ Urban / शहरी</option>
+      <option value="semi">🏘️ Semi-Urban / अर्ध-शहरी</option>
+      <option value="rural">🌾 Rural / ग्रामीण</option>
+    </select>
+
+    <label>Property Type / उपयोग</label>
+    <select id="circlePropType" style="margin-bottom:6px">
+      <option value="residential">Residential / आवासीय</option>
+      <option value="commercial">Commercial / व्यापारिक</option>
+      <option value="industrial">Industrial / औद्योगिक</option>
+      <option value="agricultural">Agricultural / कृषि</option>
+      <option value="mixed">Mixed Use / मिश्रित</option>
+    </select>
+
+    <label>Circle Rate (IGRSUP से देखकर डालें) + Unit</label>
+    <div class="unitGrid">
+      <input id="circleUnitRate" type="number" placeholder="Rate (जैसे 50000)" oninput="circleCalculate()">
+      <select id="circleRateUnit" onchange="circleCalculate()">
+        <option value="sqm">₹/sqm</option>
+        <option value="hectare">₹/hectare</option>
+        <option value="bigha">₹/bigha</option>
+        <option value="acre">₹/acre</option>
+        <option value="gaj">₹/gaj</option>
+        <option value="sqft">₹/sqft</option>
       </select>
+    </div>
 
-      <label>Select Area / Locality</label>
-      <select id="circleAreaSelect" onchange="circleAreaChange()">
-        <option value="">-- Select Area --</option>
-        <optgroup label="🏙️ Urban Areas">
-          <option value="77000">Gomti Nagar - ₹77,000/sqm</option>
-          <option value="76000">MG Marg / Hazratganj - ₹76,000/sqm</option>
-          <option value="65000">Mahanagar (Upper) - ₹65,000/sqm</option>
-          <option value="53000">Mahanagar (Avg) - ₹53,000/sqm</option>
-          <option value="62000">Indira Nagar (Upper) - ₹62,000/sqm</option>
-          <option value="48000">Indira Nagar (Avg) - ₹48,000/sqm</option>
-          <option value="42500">Vibhuti Khand - ₹42,500/sqm</option>
-          <option value="42000">Aliganj / Sitapur Road - ₹42,000/sqm</option>
-          <option value="36000">Faizabad Road - ₹36,000/sqm</option>
-          <option value="27500">Sultanpur Road - ₹27,500/sqm</option>
-          <option value="25000">Alambagh - ₹25,000/sqm</option>
-          <option value="15000">Malihabad - ₹15,000/sqm</option>
-          <option value="22000">General Urban - ₹22,000/sqm</option>
-        </optgroup>
-        <optgroup label="🌾 Rural Villages">
-          <option value="13000">Parvar (Expressway) - ₹1.30 Cr/ha</option>
-          <option value="10000">Pahara (Mohanlalganj) - ₹1 Cr/ha</option>
-          <option value="9800">Gaura - ₹98 Lakh/ha</option>
-          <option value="9700">Barkatabad - ₹97 Lakh/ha</option>
-          <option value="9500">Papanamau - ₹95 Lakh/ha</option>
-          <option value="9000">General Rural - ₹90 Lakh/ha</option>
-        </optgroup>
+    <label>Plot Area + Unit</label>
+    <div class="unitGrid">
+      <input id="circleUnitArea" type="number" placeholder="Area (जैसे 100)" oninput="circleCalculate()">
+      <select id="circleAreaUnit" onchange="circleCalculate()">
+        <option value="sqm">sqm</option>
+        <option value="hectare">hectare</option>
+        <option value="bigha">bigha</option>
+        <option value="acre">acre</option>
+        <option value="gaj">gaj</option>
+        <option value="sqft">sqft</option>
       </select>
-      <div class="rateHint" id="circleRateHint">ℹ️ Area चुनें — rate auto-fill होगा</div>
     </div>
 
-    <div id="circleManualBox" style="display:none">
-      <label>Circle Rate (₹/sqm) - खुद डालें</label>
-      <input id="circleManualRate" type="number" placeholder="जैसे 45000" oninput="circleManualCalc()">
-      <div class="rateHint">ℹ️ IGRSUP से exact rate देखकर डालें</div>
-    </div>
-
-    <label>Area (sqm / वर्ग मीटर)</label>
-    <input id="circleAreaSqm" type="number" placeholder="जैसे 100" oninput="circleCalculate()">
+    <details>
+      <summary>📍 Position Adjustment (Highway / Corner / Park / Main Road)</summary>
+      <div>
+        <label class="checkRow">
+          <input type="checkbox" id="cPosHighway" onchange="circleCalculate()">
+          Highway / Expressway के पास (अनुमानित +15%)
+        </label>
+        <label class="checkRow">
+          <input type="checkbox" id="cPosCorner" onchange="circleCalculate()">
+          Corner Plot (2+ roads) — Highest rate apply होगा
+        </label>
+        <label class="checkRow">
+          <input type="checkbox" id="cPosPark" onchange="circleCalculate()">
+          Park / Green Belt Facing (अनुमानित +5%)
+        </label>
+        <label class="checkRow">
+          <input type="checkbox" id="cPosMainRoad" onchange="circleCalculate()">
+          Main Road Facing (अनुमानित +8%)
+        </label>
+      </div>
+    </details>
 
     <label>Area / Village Name (record के लिए)</label>
     <input id="circleAreaName" placeholder="जैसे Gomti Nagar, Lucknow">
 
-    <button class="calcBtn" onclick="circleCalculate()">📊 Circle Rate + Property Value Calculate</button>
+    <button class="calcBtn" onclick="circleCalculate()">📊 Calculate Property Value</button>
 
     <div id="circlePremiumResult" class="calcResult">
-      Area और rate डालें — Property Value + अनुमानित Registry Kharch दिखेगा।
+      Rate और Area डालें — Property Value दिखेगा।
     </div>
+
+    <details class="refBox">
+      <summary>📌 Reference Area-wise Circle Rate Calculator (पुराना system) — सिर्फ reference के लिए</summary>
+      <div class="refBoxBody">
+        <div class="refDisclaimer">
+          ⚠️ <b>Disclaimer:</b> नीचे दिए गए circle rates 15 August 2026 से पहले के हैं। नए system में ये officially valid नहीं हैं। यह section सिर्फ <b>reference</b> के लिए है — actual calculation के लिए ऊपर Manual mode या IGRSUP portal use करें।
+        </div>
+
+        <label>Area Type</label>
+        <select id="circleRefZone" onchange="circleRefZoneChange()">
+          <option value="urban">🏙️ Urban / शहरी</option>
+          <option value="rural">🌾 Rural / ग्रामीण</option>
+        </select>
+
+        <label>Area / Locality</label>
+        <select id="circleRefArea" onchange="circleRefCalc()">
+          <option value="">-- Reference Area चुनें --</option>
+          <optgroup label="🏙️ Urban Areas">
+            <option value="77000">Gomti Nagar — ₹77,000/sqm</option>
+            <option value="76500">Hazratganj / MG Marg — ₹76,500/sqm</option>
+            <option value="65000">Mahanagar (Upper) — ₹65,000/sqm</option>
+            <option value="53000">Mahanagar (Avg) — ₹53,000/sqm</option>
+            <option value="62000">Indira Nagar (Upper) — ₹62,000/sqm</option>
+            <option value="48000">Indira Nagar (Avg) — ₹48,000/sqm</option>
+            <option value="42500">Vibhuti Khand — ₹42,500/sqm</option>
+            <option value="42000">Aliganj / Sitapur Road — ₹42,000/sqm</option>
+            <option value="36000">Faizabad Road — ₹36,000/sqm</option>
+            <option value="33000">Faizabad Road (Lower) — ₹33,000/sqm</option>
+            <option value="27500">Sultanpur Road / Shaheed Path — ₹27,500/sqm</option>
+            <option value="25000">Alambagh — ₹25,000/sqm</option>
+            <option value="22000">General Urban Residential — ₹22,000/sqm</option>
+            <option value="15000">Malihabad (Urban) — ₹15,000/sqm</option>
+          </optgroup>
+          <optgroup label="🌾 Rural Villages">
+            <option value="13000">Parvar (Expressway side) — ₹1.30 Cr/ha</option>
+            <option value="10000">Pahara (Mohanlalganj) — ₹1 Cr/ha</option>
+            <option value="9800">Gaura (Mohanlalganj) — ₹98 Lakh/ha</option>
+            <option value="9700">Barkatabad Jahangirabad — ₹97 Lakh/ha</option>
+            <option value="9500">Papanamau (Sadar) — ₹95 Lakh/ha</option>
+            <option value="9100">Danda Sikandarpur — ₹91 Lakh/ha</option>
+            <option value="9000">General Rural — ₹90 Lakh/ha</option>
+          </optgroup>
+        </select>
+
+        <label>Area (sqm)</label>
+        <input id="circleRefAreaSqm" type="number" placeholder="जैसे 100" oninput="circleRefCalc()">
+
+        <label>Area / Village Name (record के लिए)</label>
+        <input id="circleRefAreaName" placeholder="जैसे Gomti Nagar, Lucknow">
+
+        <div id="circleRefResult" class="refResult">
+          Reference area चुनें — पुराने system के हिसाब से circle rate calculation दिखेगा।
+        </div>
+
+        <div class="refNote">
+          ⚠️ यह reference-only calculation है — आधिकारिक नहीं
+        </div>
+      </div>
+    </details>
 
     <div class="updateBanner">
-      <span class="bIcon">📅</span>
-      <span><b>Rates 2026 के लिए:</b> UP का uniform circle rate system लागू हो रहा है। Latest rate verify करने के लिए IGRSUP देखें।</span>
+      <span class="bIcon">⚠️</span>
+      <span><b>Disclaimer:</b> यह calculation assistance tool है। Actual rate IGRSUP portal पर अपने plot की exact location डालकर verify करें। 15 August 2026 से नया system लागू है।</span>
     </div>
-
-    <a href="https://igrsup.gov.in" target="_blank" rel="noopener" class="igrsupBtn">🔗 IGRSUP Official - Exact Rate Verify करें</a>
   </div>
 </div>
 
@@ -594,7 +756,7 @@ footer a:hover{text-decoration:underline}
 <h3>📌 मुख्य टूल्स - Lucknow के लिए - 22 Drafting + BNS/BNSS/BSA Converter + Purane Tools</h3>
 <div class="grid2" style="font-size:12px;line-height:2">
 <div><b>🔥 New Criminal Law 2024:</b><br>• IPC to BNS Converter 302=103, 376=64, 420=318<br>• CrPC to BNSS 156(3)=175(3), 438=482, 482=528<br>• BSA 63 Electronic Evidence (IEA 65B)<br>• Bail Application 480/482 BNSS Format<br>• 175(3) BNSS Prachana Patra, Complaint 210 BNSS<br><br><b>Converter Tools:</b><br>• Mangal to KrutiDev / KrutiDev to Mangal<br>• Photo to PDF Court Size A4 200-500KB</div>
-<div><b>Zameen / Revenue:</b><br>• Khatauni Nakal UP Bhulekh - upbhulekh.gov.in<br>• Gata / Khasra se Malik - Bhu-Naksha<br>• Circle Rate Calculator (Auto + Manual + IGRSUP)<br>• Stamp Duty Calculator (Auto + Manual)<br><br><b>Court / Fees:</b><br>• Court Fee Calculator UP - UP Court Fee Act 1870<br>• Stamp Duty UP - Male 7% / Female 6% / Joint 6.5%<br>• Bainama Pro 6 Clauses, Kirayanama, Will, Affidavit<br>• eCourts Cause List Lucknow</div>
+<div><b>Zameen / Revenue:</b><br>• Khatauni Nakal UP Bhulekh - upbhulekh.gov.in<br>• Gata / Khasra se Malik - Bhu-Naksha<br>• Circle Rate Calculator (Manual + Unit Converter + Reference)<br>• Stamp Duty Calculator (Manual + Unit Converter + Reference)<br><br><b>Court / Fees:</b><br>• Court Fee Calculator UP - UP Court Fee Act 1870<br>• Stamp Duty UP - Male 7% / Female 6% / Joint 6.5%<br>• Bainama Pro 6 Clauses, Kirayanama, Will, Affidavit<br>• eCourts Cause List Lucknow</div>
 </div>
 </div>
 
@@ -733,70 +895,92 @@ function rotateAdSlots() {
   }
 }
 
+/* ============ UNIT CONVERSION CONSTANTS ============ */
+var UNIT_TO_SQM = {
+  sqm: 1,
+  sqft: 0.092903,
+  hectare: 10000,
+  bigha: 2529.29,
+  acre: 4046.86,
+  gaj: 0.836127
+};
+
+function convertToSqm(value, unit) {
+  if (!UNIT_TO_SQM[unit]) return value;
+  return value * UNIT_TO_SQM[unit];
+}
+
+/* ============ POSITION ADJUSTMENT ============ */
+var POSITION_ADJ = {
+  highway: 0.15,
+  park: 0.05,
+  mainRoad: 0.08
+};
+
+function applyPositionAdjustments(baseValue) {
+  var adj = 0;
+  if (document.getElementById('posHighway') && document.getElementById('posHighway').checked) adj += POSITION_ADJ.highway;
+  if (document.getElementById('posPark') && document.getElementById('posPark').checked) adj += POSITION_ADJ.park;
+  if (document.getElementById('posMainRoad') && document.getElementById('posMainRoad').checked) adj += POSITION_ADJ.mainRoad;
+  return baseValue * (1 + adj);
+}
+
+function applyCirclePositionAdjustments(baseValue) {
+  var adj = 0;
+  if (document.getElementById('cPosHighway') && document.getElementById('cPosHighway').checked) adj += POSITION_ADJ.highway;
+  if (document.getElementById('cPosPark') && document.getElementById('cPosPark').checked) adj += POSITION_ADJ.park;
+  if (document.getElementById('cPosMainRoad') && document.getElementById('cPosMainRoad').checked) adj += POSITION_ADJ.mainRoad;
+  return baseValue * (1 + adj);
+}
+
 /* ============ STAMP DUTY CALCULATOR ============ */
-var stampMode = 'auto';
-function setStampMode(mode) {
-  stampMode = mode;
-  document.getElementById('stampModeAuto').classList.toggle('active', mode === 'auto');
-  document.getElementById('stampModeManual').classList.toggle('active', mode === 'manual');
-  document.getElementById('stampAutoBox').style.display = (mode === 'auto') ? 'block' : 'none';
-  document.getElementById('stampManualBox').style.display = (mode === 'manual') ? 'block' : 'none';
-  stampCalculate();
-}
-function stampZoneChange() {
-  var zone = document.getElementById('stampZoneType').value;
-  var urbanOpts = document.querySelectorAll('#stampAreaSelect optgroup[label*="Urban"] option');
-  var ruralOpts = document.querySelectorAll('#stampAreaSelect optgroup[label*="Rural"] option');
-  urbanOpts.forEach(function (o) { o.style.display = (zone === 'urban') ? '' : 'none'; });
-  ruralOpts.forEach(function (o) { o.style.display = (zone === 'rural') ? '' : 'none'; });
-  document.getElementById('stampAreaSelect').value = '';
-  document.getElementById('stampRateHint').textContent = 'ℹ️ Area चुनें — reference rate auto-fill होगा';
-  document.getElementById('stampAutoValue').value = '';
-}
-function stampAreaChange() {
-  var sel = document.getElementById('stampAreaSelect');
-  var rate = parseFloat(sel.value);
-  if (!rate) { document.getElementById('stampRateHint').textContent = 'ℹ️ Area चुनें — reference rate auto-fill होगा'; return; }
-  var areaTxt = sel.options[sel.selectedIndex].text;
-  document.getElementById('stampRateHint').textContent = '✅ ' + areaTxt + ' · अब area (sqm) डालें';
-  stampAutoCalc();
-}
-function stampAutoCalc() {
-  if (stampMode !== 'auto') return;
-  var rate = parseFloat(document.getElementById('stampAreaSelect').value);
-  var area = parseFloat(document.getElementById('stampAreaSqm').value);
-  if (rate && area && area > 0) {
-    document.getElementById('stampAutoValue').value = Math.round(rate * area);
-  } else {
-    document.getElementById('stampAutoValue').value = '';
-  }
-  stampCalculate();
-}
-function stampManualCalc() {
-  if (stampMode !== 'manual') return;
-  stampCalculate();
-}
-function stampCalculate() {
-  var value;
-  if (stampMode === 'auto') {
-    value = parseFloat(document.getElementById('stampAutoValue').value);
-  } else {
-    value = parseFloat(document.getElementById('stampManualValue').value);
-  }
-  var buyerType = document.getElementById('stampBuyer').value;
-  var el = document.getElementById('stampPremiumResult');
-  if (!value || value <= 0) {
-    el.innerHTML = '💡 Property value डालें और Calculate दबाएँ — Stamp Duty, Registration Fee, Rebate और Total सब दिखेगा।';
+function stampUnitCalc() {
+  var rate = parseFloat(document.getElementById('stampUnitRate').value);
+  var rateUnit = document.getElementById('stampRateUnit').value;
+  var area = parseFloat(document.getElementById('stampUnitArea').value);
+  var areaUnit = document.getElementById('stampAreaUnit').value;
+  var el = document.getElementById('stampUnitResult');
+
+  if (!rate || !area || area <= 0) {
+    el.textContent = 'Rate और Area डालें — auto convert होगा';
     return;
   }
+
+  var ratePerSqm = rate / UNIT_TO_SQM[rateUnit];
+  var areaSqm = convertToSqm(area, areaUnit);
+  var baseValue = ratePerSqm * areaSqm;
+  var adjustedValue = applyPositionAdjustments(baseValue);
+
+  document.getElementById('stampManualValue').value = Math.round(adjustedValue);
+
+  el.innerHTML = '✅ Rate: ₹' + Math.round(ratePerSqm).toLocaleString('en-IN') + '/sqm · Area: ' + areaSqm.toFixed(2) + ' sqm<br>' +
+    'Base Value: ₹' + Math.round(baseValue).toLocaleString('en-IN') +
+    (adjustedValue !== baseValue ? '<br>Position Adjusted: ₹' + Math.round(adjustedValue).toLocaleString('en-IN') : '') +
+    '<br><span style="color:#0a7a0a;font-weight:700">→ Stamp Duty calculator में auto-fill हो गया</span>';
+
+  stampCalculate();
+}
+
+function stampCalculate() {
+  var value = parseFloat(document.getElementById('stampManualValue').value);
+  var buyerType = document.getElementById('stampBuyer').value;
+  var el = document.getElementById('stampPremiumResult');
+
+  if (!value || value <= 0) {
+    el.innerHTML = '💡 Property value डालें — Stamp Duty, Registration Fee, Rebate और Total दिखेगा।';
+    return;
+  }
+
   var stampRate, rebate = 0, typeLabel;
   if (buyerType === 'male') { stampRate = 0.07; typeLabel = 'Male / पुरुष'; }
   else if (buyerType === 'female') { stampRate = 0.06; rebate = 10000; typeLabel = 'Female / महिला'; }
   else { stampRate = 0.065; rebate = 5000; typeLabel = 'Joint (Male + Female)'; }
+
   var stampDuty = value * stampRate;
   var regFee = value * 0.01;
   var total = stampDuty + regFee - rebate;
   if (total < 0) total = stampDuty + regFee;
+
   el.innerHTML =
     '<div style="font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:8px">📊 Detailed Breakdown</div>' +
     '<b>Buyer Type:</b> ' + typeLabel + '<br>' +
@@ -810,64 +994,184 @@ function stampCalculate() {
 }
 
 /* ============ CIRCLE RATE CALCULATOR ============ */
-var circleMode = 'auto';
-function setCircleMode(mode) {
-  circleMode = mode;
-  document.getElementById('circleModeAuto').classList.toggle('active', mode === 'auto');
-  document.getElementById('circleModeManual').classList.toggle('active', mode === 'manual');
-  document.getElementById('circleAutoBox').style.display = (mode === 'auto') ? 'block' : 'none';
-  document.getElementById('circleManualBox').style.display = (mode === 'manual') ? 'block' : 'none';
-  circleCalculate();
-}
-function circleZoneChange() {
-  var zone = document.getElementById('circleZoneType').value;
-  var urbanOpts = document.querySelectorAll('#circleAreaSelect optgroup[label*="Urban"] option');
-  var ruralOpts = document.querySelectorAll('#circleAreaSelect optgroup[label*="Rural"] option');
-  urbanOpts.forEach(function (o) { o.style.display = (zone === 'urban') ? '' : 'none'; });
-  ruralOpts.forEach(function (o) { o.style.display = (zone === 'rural') ? '' : 'none'; });
-  document.getElementById('circleAreaSelect').value = '';
-  document.getElementById('circleRateHint').textContent = 'ℹ️ Area चुनें — rate auto-fill होगा';
-}
-function circleAreaChange() {
-  var sel = document.getElementById('circleAreaSelect');
-  var rate = parseFloat(sel.value);
-  if (!rate) { document.getElementById('circleRateHint').textContent = 'ℹ️ Area चुनें — rate auto-fill होगा'; return; }
-  document.getElementById('circleRateHint').textContent = '✅ ' + sel.options[sel.selectedIndex].text;
-  circleCalculate();
-}
-function circleManualCalc() { if (circleMode === 'manual') circleCalculate(); }
 function circleCalculate() {
-  var rate, areaName;
-  if (circleMode === 'auto') {
-    rate = parseFloat(document.getElementById('circleAreaSelect').value);
-    var sel = document.getElementById('circleAreaSelect');
-    areaName = sel.value ? sel.options[sel.selectedIndex].text.split(' - ')[0] : '-';
-  } else {
-    rate = parseFloat(document.getElementById('circleManualRate').value);
-    areaName = document.getElementById('circleAreaName').value.trim() || '-';
-  }
-  var area = parseFloat(document.getElementById('circleAreaSqm').value);
+  var rate = parseFloat(document.getElementById('circleUnitRate').value);
+  var rateUnit = document.getElementById('circleRateUnit').value;
+  var area = parseFloat(document.getElementById('circleUnitArea').value);
+  var areaUnit = document.getElementById('circleAreaUnit').value;
+  var areaName = document.getElementById('circleAreaName').value.trim() || '-';
+  var zone = document.getElementById('circleZoneNew').value;
+  var propType = document.getElementById('circlePropType').value;
   var el = document.getElementById('circlePremiumResult');
+
   if (!rate || !area || area <= 0) {
-    el.innerHTML = '💡 Area और rate डालें — Property Value + अनुमानित Registry Kharch दिखेगा।';
+    el.innerHTML = '💡 Rate और Area डालें — Property Value दिखेगा।';
     return;
   }
+
+  var ratePerSqm = rate / UNIT_TO_SQM[rateUnit];
+  var areaSqm = convertToSqm(area, areaUnit);
+  var baseValue = ratePerSqm * areaSqm;
+  var adjustedValue = applyCirclePositionAdjustments(baseValue);
+
+  var sM = adjustedValue * 0.07 + adjustedValue * 0.01;
+  var sF = adjustedValue * 0.06 + adjustedValue * 0.01 - 10000;
+  if (sF < 0) sF = adjustedValue * 0.06 + adjustedValue * 0.01;
+
+  var zoneLabel = { urban: '🏙️ Urban', semi: '🏘️ Semi-Urban', rural: '🌾 Rural' }[zone] || zone;
+  var propLabel = { residential: 'Residential', commercial: 'Commercial', industrial: 'Industrial', agricultural: 'Agricultural', mixed: 'Mixed Use' }[propType] || propType;
+
+  el.innerHTML =
+    '<div style="font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:8px">📊 Circle Rate Breakdown</div>' +
+    '<b>Area Name:</b> ' + areaName + '<br>' +
+    '<b>Zone:</b> ' + zoneLabel + '<br>' +
+    '<b>Property Type:</b> ' + propLabel + '<br>' +
+    '<b>Rate:</b> ₹' + Math.round(ratePerSqm).toLocaleString('en-IN') + '/sqm<br>' +
+    '<b>Area:</b> ' + areaSqm.toFixed(2) + ' sqm<br>' +
+    '<hr style="margin:8px 0;border:none;border-top:1px dashed #d4c9b0">' +
+    '<b>Base Property Value:</b> ₹' + Math.round(baseValue).toLocaleString('en-IN') + '<br>' +
+    (adjustedValue !== baseValue ? '<b style="color:#0a7a0a">Position Adjusted:</b> ₹' + Math.round(adjustedValue).toLocaleString('en-IN') + '<br>' : '') +
+    '<hr style="margin:8px 0;border:none;border-top:1px dashed #d4c9b0">' +
+    '<b>Male Buyer Total:</b> ₹' + Math.round(sM).toLocaleString('en-IN') + '<br>' +
+    '<b>Female Buyer Total:</b> ₹' + Math.round(sF).toLocaleString('en-IN') + '<br>' +
+    '<span style="color:#8b0000;font-size:10px">⚠️ Reference calculation. Actual rate IGRSUP par plot की location डालकर verify करें।</span>';
+}
+
+/* ============ REFERENCE CALCULATORS (Old System) ============ */
+/* Note: ये rates 15 August 2026 से पहले के हैं।
+   नए system में officially valid नहीं हैं।
+   सिर्फ user reference के लिए, disclaimer के साथ। */
+
+function stampRefZoneChange() {
+  var zone = document.getElementById('stampRefZone').value;
+  var sel = document.getElementById('stampRefArea');
+  var urbanGroup = document.getElementById('stampRefUrbanGroup');
+  var ruralGroup = document.getElementById('stampRefRuralGroup');
+
+  if (zone === 'urban') {
+    if (urbanGroup) urbanGroup.style.display = '';
+    if (ruralGroup) ruralGroup.style.display = 'none';
+  } else {
+    if (urbanGroup) urbanGroup.style.display = 'none';
+    if (ruralGroup) ruralGroup.style.display = '';
+  }
+  sel.value = '';
+  document.getElementById('stampRefValue').value = '';
+  document.getElementById('stampRefResult').innerHTML = 'Reference area चुनें — पुराने system के हिसाब से calculation दिखेगा।';
+}
+
+function stampRefCalc() {
+  var rate = parseFloat(document.getElementById('stampRefArea').value);
+  var area = parseFloat(document.getElementById('stampRefAreaSqm').value);
+  var el = document.getElementById('stampRefResult');
+  var valEl = document.getElementById('stampRefValue');
+
+  if (!rate) {
+    valEl.value = '';
+    el.innerHTML = '⚠️ Reference only — पहले area चुनें।';
+    return;
+  }
+  if (!area || area <= 0) {
+    valEl.value = '';
+    el.innerHTML = '⚠️ Reference only — area (sqm) डालें।';
+    return;
+  }
+
+  var baseValue = rate * area;
+  valEl.value = Math.round(baseValue);
+
+  var buyerType = document.getElementById('stampBuyer').value;
+  var stampRate, rebate = 0, typeLabel;
+  if (buyerType === 'male') { stampRate = 0.07; typeLabel = 'Male / पुरुष'; }
+  else if (buyerType === 'female') { stampRate = 0.06; rebate = 10000; typeLabel = 'Female / महिला'; }
+  else { stampRate = 0.065; rebate = 5000; typeLabel = 'Joint (Male + Female)'; }
+
+  var stampDuty = baseValue * stampRate;
+  var regFee = baseValue * 0.01;
+  var total = stampDuty + regFee - rebate;
+  if (total < 0) total = stampDuty + regFee;
+
+  el.innerHTML =
+    '<div style="font-size:12px;font-weight:700;color:#8b6914;margin-bottom:6px">📌 Reference Breakdown (पुराना system)</div>' +
+    '<b>Area Rate:</b> ₹' + rate.toLocaleString('en-IN') + '/sqm<br>' +
+    '<b>Area:</b> ' + area + ' sqm<br>' +
+    '<b>Property Value:</b> ₹' + Math.round(baseValue).toLocaleString('en-IN') + '<br>' +
+    '<b>Buyer:</b> ' + typeLabel + '<br>' +
+    '<hr style="margin:6px 0;border:none;border-top:1px dashed #d4c9b0">' +
+    '<b>Stamp Duty (' + (stampRate * 100) + '%):</b> ₹' + Math.round(stampDuty).toLocaleString('en-IN') + '<br>' +
+    '<b>Registration (1%):</b> ₹' + Math.round(regFee).toLocaleString('en-IN') +
+    (rebate > 0 ? '<br><b>Rebate:</b> -₹' + rebate.toLocaleString('en-IN') : '') +
+    '<br><hr style="margin:6px 0;border:none;border-top:1px dashed #d4c9b0">' +
+    '<b style="font-size:14px;color:#8b6914">Reference Total: ₹' + Math.round(total).toLocaleString('en-IN') + '</b>' +
+    '<br><span style="color:#8b0000;font-size:10px">⚠️ यह reference-only calculation है — 15 Aug 2026 से official नहीं। Actual amount IGRSUP से verify करें।</span>';
+}
+
+function circleRefZoneChange() {
+  var zone = document.getElementById('circleRefZone').value;
+  var sel = document.getElementById('circleRefArea');
+  var groups = sel.querySelectorAll('optgroup');
+  var urbanGroup = groups[0];
+  var ruralGroup = groups[1];
+
+  if (zone === 'urban') {
+    if (urbanGroup) urbanGroup.style.display = '';
+    if (ruralGroup) ruralGroup.style.display = 'none';
+  } else {
+    if (urbanGroup) urbanGroup.style.display = 'none';
+    if (ruralGroup) ruralGroup.style.display = '';
+  }
+  sel.value = '';
+  document.getElementById('circleRefResult').innerHTML = 'Reference area चुनें — पुराने system के हिसाब से circle rate calculation दिखेगा।';
+}
+
+function circleRefCalc() {
+  var rate = parseFloat(document.getElementById('circleRefArea').value);
+  var area = parseFloat(document.getElementById('circleRefAreaSqm').value);
+  var areaName = document.getElementById('circleRefAreaName').value.trim() || '-';
+  var el = document.getElementById('circleRefResult');
+
+  if (!rate) {
+    el.innerHTML = '⚠️ Reference only — पहले area चुनें।';
+    return;
+  }
+  if (!area || area <= 0) {
+    el.innerHTML = '⚠️ Reference only — area (sqm) डालें।';
+    return;
+  }
+
   var value = rate * area;
   var sM = value * 0.07 + value * 0.01;
   var sF = value * 0.06 + value * 0.01 - 10000;
   if (sF < 0) sF = value * 0.06 + value * 0.01;
+
   el.innerHTML =
-    '<div style="font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:8px">📊 Circle Rate Breakdown</div>' +
+    '<div style="font-size:12px;font-weight:700;color:#8b6914;margin-bottom:6px">📌 Reference Breakdown (पुराना system)</div>' +
     '<b>Area Name:</b> ' + areaName + '<br>' +
-    '<b>Circle Rate:</b> ₹' + rate.toLocaleString('en-IN') + '/sqm<br>' +
+    '<b>Rate:</b> ₹' + rate.toLocaleString('en-IN') + '/sqm<br>' +
     '<b>Area:</b> ' + area + ' sqm<br>' +
-    '<hr style="margin:8px 0;border:none;border-top:1px dashed #d4c9b0">' +
-    '<b style="font-size:14px;color:#8b0000">Property Value: ₹' + Math.round(value).toLocaleString('en-IN') + '</b><br>' +
-    '<hr style="margin:8px 0;border:none;border-top:1px dashed #d4c9b0">' +
-    '<b>Purush kharidaar (Male):</b> ₹' + Math.round(sM).toLocaleString('en-IN') + '<br>' +
-    '<b>Mahila kharidaar (Female):</b> ₹' + Math.round(sF).toLocaleString('en-IN') + '<br>' +
-    '<span style="color:#8b0000;font-size:10px">⚠️ Reference rates only. Actual rate IGRSUP par verify karein।</span>';
+    '<hr style="margin:6px 0;border:none;border-top:1px dashed #d4c9b0">' +
+    '<b style="font-size:14px;color:#8b6914">Property Value: ₹' + Math.round(value).toLocaleString('en-IN') + '</b><br>' +
+    '<hr style="margin:6px 0;border:none;border-top:1px dashed #d4c9b0">' +
+    '<b>Male Buyer Total:</b> ₹' + Math.round(sM).toLocaleString('en-IN') + '<br>' +
+    '<b>Female Buyer Total:</b> ₹' + Math.round(sF).toLocaleString('en-IN') + '<br>' +
+    '<span style="color:#8b0000;font-size:10px">⚠️ यह reference-only calculation है — 15 Aug 2026 से official नहीं। Actual rate IGRSUP portal पर verify करें।</span>';
 }
+
+/* Legacy compatibility */
+function setStampMode() {}
+function setCircleMode() {}
+function stampZoneChange() {}
+function stampAreaChange() {}
+function stampAutoCalc() {}
+function circleZoneChange() {}
+function circleAreaChange() {}
+function circleManualCalc() {}
+function calcStampDuty() { stampCalculate(); }
+function calcCircleRateManual() { circleCalculate(); }
+function calcCircleRate() { circleCalculate(); }
+function toggleCircleZone() {}
+function fillUrbanRate() {}
+function fillRuralRate() {}
 
 var LANG = {
   hi: {
@@ -1254,14 +1558,6 @@ function calcCourtFee() {
   el.innerHTML = '<b>Dava Mulya:</b> ₹' + v.toLocaleString('en-IN') + '<br><b>Court Fee (' + slab + '):</b> ₹' + Math.round(fee).toLocaleString('en-IN') + '<br><b>Registration (1%):</b> ₹' + Math.round(regFee).toLocaleString('en-IN') + '<br><hr style="margin:5px 0"><b>Total (indicative):</b> ₹' + Math.round(fee + regFee).toLocaleString('en-IN') + '<br><span style="color:#8b0000">Yeh sirf andaza hai. UP Court Fees Act 1870 ke anusar vakil se confirm karein.</span>';
 }
 
-/* Legacy compat */
-function calcStampDuty() { stampCalculate(); }
-function calcCircleRateManual() { circleCalculate(); }
-function calcCircleRate() { circleCalculate(); }
-function toggleCircleZone() { circleZoneChange(); }
-function fillUrbanRate() { circleAreaChange(); }
-function fillRuralRate() { circleAreaChange(); }
-
 var TOOLS = [
   { id:'bail_regular', fmt:'bail_regular', title:'जमानत प्रार्थना - Regular Bail', desc:'480 BNSS / 437 CrPC', kw:'bail jamanat jamanti regular 437 480 crpc bnss' },
   { id:'bail_anticipatory', fmt:'bail_anticipatory', title:'अग्रिम जमानत - Anticipatory Bail', desc:'482 BNSS / 438 CrPC', kw:'anticipatory agrim jamanat 438 482' },
@@ -1288,7 +1584,7 @@ var TOOLS = [
   { id:'conv_photopdf', action:'photo', title:'Photo → PDF Court Size', desc:'A4, 200-500KB', kw:'photo pdf image court size a4' },
   { id:'conv_courtfee', action:'courtfee', title:'Court Fee + Stamp UP', desc:'Calculator', kw:'court fee stamp duty up calculator' },
   { id:'conv_stamp', action:'stamp', title:'Stamp Duty Male/Female/Joint', desc:'7% / 6% / 6.5%', kw:'stamp duty male female joint up calculator' },
-  { id:'conv_circle', action:'circle', title:'Circle Rate Calculator', desc:'Auto Urban/Rural + Manual + IGRSUP', kw:'circle rate lucknow registry stamp igrsup manual urban rural' },
+  { id:'conv_circle', action:'circle', title:'Circle Rate Calculator', desc:'Manual + Unit Converter + Reference', kw:'circle rate lucknow registry stamp igrsup manual urban rural' },
   { id:'link_bhulekh', action:'link', href:'https://upbhulekh.gov.in', title:'UP Bhulekh - Khatauni', desc:'Nakal Download', kw:'khatauni bhulekh up nakal' },
   { id:'link_naksha', action:'link', href:'https://upbhunaksha.gov.in', title:'Bhu-Naksha Map', desc:'Gata / Khasra Map', kw:'naksha map gata khasra bhu' },
   { id:'link_ecourts', action:'link', href:'https://ecourts.gov.in', title:'eCourts Cause List Lucknow', desc:'Case Status', kw:'ecourts cause list lucknow case status' }
@@ -1487,7 +1783,7 @@ function applyProBadge() { var b = document.getElementById('proBadge'); if (isPr
 var PAGES = {
   about: {
     title: 'About Us - LegalTools Lucknow',
-    body: '<h2>About LegalTools Lucknow</h2><p>LegalTools Lucknow ek independent documentation assistance platform hai jo vakeelon, law students, aur aam nagrikon ko Lucknow aur Uttar Pradesh ke liye court-ready legal formats, converters aur calculators provide karta hai.</p><h3>Hamara Mission</h3><p>1 July 2024 se lagu naye criminal laws (BNS, BNSS, BSA) ke baad logon ko purane aur naye sections ke beech confusion hoti hai. Hum aasan, free aur verified tools ke through yeh gap fill karte hain.</p><h3>Kya Provide Karte Hain</h3><ul><li>IPC ↔ BNS, CrPC ↔ BNSS, IEA ↔ BSA Converter</li><li>22+ Legal Drafting Formats</li><li>Court Fee + Stamp Duty + Circle Rate Calculators (Auto + Manual)</li><li>Mangal ↔ KrutiDev Hindi Font Converter</li><li>Photo to PDF (Court Size A4)</li><li>Khatauni, Bhu-Naksha, eCourts ke direct links</li><li>Zeenat AI Voice Legal Assistant (Lucknow Kanoon Sahayak 9.0)</li></ul><h3>Important</h3><p><strong>Hum ek legal firm ya vakeel nahi hain.</strong> Yeh tool sirf documentation assistance deta hai. Kanooni salah ke liye registered Advocate se milein.</p><p>Contact: <strong>sahayakkanoon@gmail.com</strong></p>'
+    body: '<h2>About LegalTools Lucknow</h2><p>LegalTools Lucknow ek independent documentation assistance platform hai jo vakeelon, law students, aur aam nagrikon ko Lucknow aur Uttar Pradesh ke liye court-ready legal formats, converters aur calculators provide karta hai.</p><h3>Hamara Mission</h3><p>1 July 2024 se lagu naye criminal laws (BNS, BNSS, BSA) ke baad logon ko purane aur naye sections ke beech confusion hoti hai. Hum aasan, free aur verified tools ke through yeh gap fill karte hain.</p><h3>Kya Provide Karte Hain</h3><ul><li>IPC ↔ BNS, CrPC ↔ BNSS, IEA ↔ BSA Converter</li><li>22+ Legal Drafting Formats</li><li>Court Fee + Stamp Duty + Circle Rate Calculators (Manual + Unit Converter + Reference)</li><li>Mangal ↔ KrutiDev Hindi Font Converter</li><li>Photo to PDF (Court Size A4)</li><li>Khatauni, Bhu-Naksha, eCourts ke direct links</li><li>Zeenat AI Voice Legal Assistant (Lucknow Kanoon Sahayak 9.0)</li></ul><h3>Important</h3><p><strong>Hum ek legal firm ya vakeel nahi hain.</strong> Yeh tool sirf documentation assistance deta hai. Kanooni salah ke liye registered Advocate se milein.</p><p>Contact: <strong>sahayakkanoon@gmail.com</strong></p>'
   },
   privacy: {
     title: 'Privacy Policy - LegalTools Lucknow',
@@ -1561,9 +1857,9 @@ function botReply(q) {
     }
   }
   if (/bail|jamanat|jamanti/.test(s)) return 'Jamanat ke liye:\nRegular Bail = Dhara 480 BNSS (437 CrPC)\nAnticipatory Bail = Dhara 482 BNSS (438 CrPC)';
-  if (/stamp|registry|registration/.test(s)) return 'Stamp Duty Calculator me Auto ya Manual mode select karein. Male 7%, Female 6%, Joint 6.5%. Registration 1%.';
+  if (/stamp|registry|registration/.test(s)) return 'Stamp Duty Calculator me Manual mode ya Unit Converter use karein. Male 7%, Female 6%, Joint 6.5%. Registration 1%.';
   if (/court fee|adalat shulk/.test(s)) return 'Court Fee Calculator me rashi daalein.';
-  if (/circle|registry/.test(s)) return 'Circle Rate Calculator me area (sqm) daalein. Auto mode me rate dropdown से auto-fill hoga.';
+  if (/circle|registry/.test(s)) return 'Circle Rate Calculator me apna rate IGRSUP se lein aur Unit Converter use karein. Reference section bhi available hai.';
   if (/mangal|kruti|font/.test(s)) return 'Mangal to KrutiDev tool use karein - Type ya File Upload mode.';
   if (/photo|pdf|scan/.test(s)) return 'Photo to PDF tool me images select karein — A4 court size PDF.';
   if (/khatauni|bhulekh|nakal/.test(s)) return 'Khatauni ke liye upbhulekh.gov.in.';
@@ -1757,8 +2053,8 @@ window.addEventListener('appinstalled', function () {
   showTrending();
   renderHistory();
   showQuote();
-  stampZoneChange();
-  circleZoneChange();
+  if (document.getElementById('stampRefZone')) stampRefZoneChange();
+  if (document.getElementById('circleRefZone')) circleRefZoneChange();
   var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
   var tag = document.getElementById('voiceSupportTag');
   if (tag) tag.innerText = SR ? '🎤 Voice ready' : '';
