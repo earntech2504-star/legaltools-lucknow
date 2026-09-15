@@ -1,0 +1,21 @@
+svg xmlns=httpwww.w3.org2000svg viewBox=0 0 512 512
+  defs
+    linearGradient id=bg x1=0% y1=0% x2=100% y2=100%
+      stop offset=0% stop-color=#1a1a1a
+      stop offset=100% stop-color=#2b1d14
+    linearGradient
+  defs
+  rect width=512 height=512 fill=url(#bg) rx=80
+  !-- Scales of justice --
+  g transform=translate(256,240) fill=none stroke=#f4d7b0 stroke-width=14 stroke-linecap=round stroke-linejoin=round
+    line x1=0 y1=-120 x2=0 y2=120
+    line x1=-130 y1=-90 x2=130 y2=-90
+    circle cx=0 cy=-130 r=18 fill=#8b0000 stroke=none
+    path d=M -130 -90 L -170 -20 L -90 -20 Z fill=#8b0000 stroke=none
+    path d=M 130 -90 L 90 -20 L 170 -20 Z fill=#8b0000 stroke=none
+    line x1=-60 y1=120 x2=60 y2=120
+    line x1=-70 y1=140 x2=70 y2=140
+  g
+  !-- BookBNS label --
+  text x=256 y=440 font-family=Times New Roman, serif font-size=56 font-weight=bold fill=#f4d7b0 text-anchor=middleBNStext
+svg

@@ -1,0 +1,66 @@
+{
+  "name": "LegalTools Lucknow - BNS BNSS BSA Converter & Legal Drafting",
+  "short_name": "LegalTools",
+  "description": "IPC to BNS, CrPC to BNSS, IEA to BSA Converter. Bail Application, Court Fee, Circle Rate, Mangal to KrutiDev, Photo to PDF - Lucknow ke liye",
+  "start_url": "/?utm_source=pwa",
+  "id": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui", "browser"],
+  "background_color": "#f4f1ea",
+  "theme_color": "#1a1a1a",
+  "orientation": "portrait-primary",
+  "lang": "hi-IN",
+  "dir": "ltr",
+  "scope": "/",
+  "categories": ["legal", "productivity", "utilities", "education"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "BNS Converter",
+      "short_name": "BNS",
+      "description": "IPC to BNS Section Converter",
+      "url": "/?tool=converter",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Bail Application",
+      "short_name": "Bail",
+      "description": "Regular aur Anticipatory Bail Format",
+      "url": "/?tool=bail",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Court Fee Calculator",
+      "short_name": "Court Fee",
+      "description": "UP Court Fee + Stamp Duty",
+      "url": "/?tool=courtfee",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
